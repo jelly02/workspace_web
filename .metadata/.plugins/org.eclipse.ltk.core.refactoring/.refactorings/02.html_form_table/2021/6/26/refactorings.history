@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;02.html_form_table/src/main/webapp/sighIn.html&apos; to &apos;joinMember.html&apos;" description="Rename resource &apos;sighIn.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/sighIn.html" name="joinMember.html" stamp="1624503676068" updateReferences="true"/>
+</session>

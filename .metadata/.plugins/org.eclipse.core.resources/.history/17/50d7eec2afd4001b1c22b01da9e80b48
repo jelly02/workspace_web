@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML5 FORM 예제</title>
+</head>
+<body>
+	<h3>HTML5 FORM</h3>
+	
+	<form action="" method="get">
+		<h1>회원가입</h1>
+
+
+		<table border="1" cellspacing="2px" cellpading="5px" bgcolor="AntiqueWhite">
+				<form action = "result.html" method = "post">
+							
+							<!-- 아이디 -->
+							
+							<tr>
+								<td align="center">아이디</td>
+								<td>
+									<input type = "text" name="memberId" autofocus="autofocus" required = "requirde" 
+									placeholder="영문+숫자 조합 30자리 입력" style="width:250px">
+								</td>
+							</tr>
+							
+							<tr>
+								<td align="center">비밀번호</td>
+								<td>
+									<input type = "password" name="memberPw"  required = "requirde" placeholder="영문+숫자+특수문자 조합 20자리 입력"
+									style="width:250px">
+									<input type = "checkbox" name="visiblePw">	비밀번호 보기
+								</td>
+							</tr>
+							
+							<tr>
+								<td align="center">비밀번호 확인</td>
+								<td><input type = "password" name="memberPwConfirm"  required = "requirde"></td>
+							</tr>
+							
+							<tr>
+								<td align="center">이름</td>
+								<td><input type = "password" name="name"  required = "requirde" ></td>
+							</tr>
+							
+							<tr>
+								<td align="center">휴대폰</td>
+								<td>	
+									<input type = "password" name="mobile"  required = "requirde" 
+										placeholder=" ex)01012345678">
+								</td>
+							</tr>
+							
+							<tr>
+								<td align="center">이메일 </td>
+								<td>
+									<input type = "text" name="email1"  required = "requirde"> 
+									<input type = "text" name="email2"  required = "requirde">
+								</td>
+							</tr>
+							
+							<tr>
+								<td align="center">이메일2</td>
+								<td>
+									<input type = "text" name="email2">
+								
+									<select name = "selectEmail">
+										<option value = "none"> 선택 </option>
+										<option value = "@naver.com"> 네이버 </option>
+										<option value = "@gmail.com"> 구글 </option>
+										<option value = "@daum.net"> 다음 </option>
+										<option value = "userInput"> 직접 입력 </option>
+									</select>			
+								</td>
+							</tr>
+							
+				
+							<tr>
+								<td align="center" colspan="2" align="center">
+									<input type = "submit" value = "회원가입" >
+									<input type = "reset" value = "취소">
+								</td>
+							</tr>
+					
+							
+					</form>
+			</table>
+			
+			
+			
+	
+	</form>
+
+</body>
+</html>

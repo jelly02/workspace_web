@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+		<title>CSS BASIC</title>
+		
+		<!-- css internal -->
+		<style type="text/css">
+		
+		h1 {color : blue;'}
+		
+		
+		</style>
+		
+</head>
+	<body>
+		<h1>CSS BASIC</h1>
+		
+		<h1 style="color : red; font-size : 20px">CSS inline</h1>
+		
+		<h1>CSS internal</h1>
+		
+		<h1>CSS external</h1>
+		
+		<h1>CSS import</h1>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- css -->
+	<style type="text/css">
+	
+		/*(1) ~jpg로 끝나는 img만 선택*/
+		img[src$=".jpg"] { width : 10%; height : 5%;}
+		
+		/*(2) img에 마우스가 왔을 때 처리*/
+	   	img:hover { border-style:  pink; }
+	
+	</style>
+
+</head>
+<body>
+	<h3>이미지 뷰</h3>
+	
+	<img src="img/00.jpg">
+	<img src="img/01.jpg">
+	<img src="img/02.jpg">
+	<img src="img/03.jpg">
+	<img src="img/04.jpg">
+	<img src="img/05.jpg">
+	<img src="img/06.jpg">
+	<img src="img/07.jpg">
+	<img src="img/08.jpg">
+	<img src="img/09.gif">
+	<img src="img/10.gif">
+	
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+		<!-- CSS external											이 파일을 기준으로 하나 올라감 -->
+		<link type="text/css" rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<a href="index.html"><img src = "img/icon.png"></a>
+	
+	<h3>회원관리 시스템</h3>
+	<hr>
+		
+	<div class="top_menu">
+			<a href="login.html">로그인</a> <span class="seperator"> | </span>
+			<a class="color bold" href="joinMember.html">회원가입</a> <span class="seperator"> | </span>
+			<a  class="bold" href="findMember.html">아이디/비밀번호찾기</a> 
+	</div>
+		
+		<h2>< 아이디 찾기 ></h2>
+			<div class = "line">
+				<form action = "result.html" method = "post">
+					<div>			
+						<span class="input_label">이름</span>
+						<input type = "text" name="name"> 
+					</div>
+					
+					<div>
+						<span class="input_label">휴대폰</span>
+						<input type = "text" name="phone">  
+					</div>
+					
+					<div>
+						<span class="input_label">이메일</span>
+						<input type = "text" name="email1"> 
+						<input type = "text" name="email2">  
+					</div>
+					
+					<div>	
+						<span class="input_label">비밀번호</span>
+						<input type = "password" name="memberPw">  
+					</div>
+					
+					<div class = "btn">
+						<input type = "submit" value = "아이디 찾기 " >
+						<input type = "reset" value = "취소">  
+					</div>			
+				 </form>
+		</div>	
+		
+		<h2>< 비밀번호 찾기 ></h2>
+		
+				<div class = "line">
+				<form action = "result.html" method = "post">
+					
+					<div>
+						<span class="input_label">아이디</span>
+						<input type = "text" name="memberId">  
+					</div>
+					
+					<div>			
+						<span class="input_label">이름</span>
+						<input type = "text" name="name"> 
+					</div>
+					
+					<div>
+						<span class="input_label">휴대폰</span>
+						<input type = "text" name="phone">  
+					</div>
+					
+					<div>
+						<span class="input_label">이메일</span>
+						<input type = "text" name="email1"> 
+						<input type = "text" name="email2">  
+					</div>
+					
+
+					<div class = "btn">
+						<input type = "submit" value = "비밀번호 찾기 " >
+						<input type = "reset" value = "취소">  
+					</div>			
+				 </form>
+		</div>	
+</body>
+</html>

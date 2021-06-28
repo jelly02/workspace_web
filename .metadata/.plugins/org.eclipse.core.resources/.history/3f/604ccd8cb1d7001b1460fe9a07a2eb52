@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+		<title>CSS BASIC</title>
+		
+		<!-- css internal -->
+		<style type="text/css">
+		
+		h1 {color : blue;}
+		.common {background-color: orange;}
+		div.common {background-color: green; font-size : 25px; color: white; }
+		#div_title { border : solid 1px pink; width:70%; height:30px; padding:10px 0; margin-top: 30px;}
+		
+		</style>
+		
+</head>
+	<body>
+		<h1 class="title">CSS BASIC</h1>
+		
+		<h1 style="color : red; font-size : 20px">CSS inline</h1>
+		
+		<h1 class="common">CSS internal</h1>
+		
+		<h1>CSS external</h1>
+		
+		<h1>CSS import</h1>
+		
+		<div class="common">div contents</div>
+		<p class="common">p contents</p>	
+		
+		<div id="div_title">회원 관리</div>
+		
+		<!-- table로 로그인 -->
+		<table border="1" cellspacing="5px" cellpading="5px">
+					<form action = "result.html" method = "post">
+					
+					<!-- 아이디 -->
+					
+					<tr>
+						<td>아이디</td>
+						<td><input type = "text" name="memberId"></td>
+					</tr>
+					
+					<tr>
+						<td>비밀번호</td>
+						<td><input type = "password" name="memberPw"></td>
+					</tr>
+					
+					
+					
+					<tr>
+						<td colspan="2" align="center">
+							<input type = "submit" value = "로그인" >
+							<input type = "reset" value = "취소">
+						</td>
+					</tr>
+			
+					
+					</form>
+			</table>	
+			
+			
+			
+			
+	</body>
+</html>

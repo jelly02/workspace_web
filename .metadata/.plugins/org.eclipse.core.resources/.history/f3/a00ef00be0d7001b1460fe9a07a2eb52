@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/* ul, ol 설정 */
+ul.menu_item1, ol.menu_item1 {
+	list-style: none;
+	margin:0;
+	padding : 0;
+	
+}
+/* ul, ol의 li 설정 */
+ul.menu_item1 li, ol.menu_item1 li {
+	padding: 10px 0 10px 10px;
+	margin-bottom: 10px;
+	border-bottom: dotted 1px gray;
+	font-size: 15px;
+}
+
+/* ul, ol의 li의 맨 마지막 li항목은 밑줄 제거하기 */ 
+ul.menu_item1 li:last-child, ol.menu_item1 li:last-child{
+	
+	border-bottom: 0px;
+
+}
+/* ul, ol의 li의 앞에 '>' 를 아이콘으로 사용  */ 
+ul.menu_item1 li:before, ol.menu_item1 li:before{
+	content : ">"; 
+	display : inline-block;
+	vertical-align: middle;
+	padding: 0 5px 6px 0;
+
+}
+
+/*실습*/
+ul.menu_item2, ol.menu_item2 {
+	list-style: none;
+	margin:0;
+	padding : 0;
+}
+
+/* ul, ol의 li 설정 */
+ul.menu_item2 li, ol.menu_item2 li {
+		display : inline;
+		font-size : 15px;
+		margin-right: 10px;
+		border : solid 1px blue;
+		padding : 5px;
+		
+/*		float : left;*/
+}
+
+/* 테이블 없이 form 사용하기 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<!--  문서타입 선언문 : html4 -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang = "ko">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<title>로그인 | MMS </title>
+		</head>
+	
+	<body>
+	
+		<a href="index.html"><img src = "img/icon.png"></a>
+	
+	<h3>회원관리 시스템</h3>
+		<hr>
+		
+		<h3>
+			<a href="login.html">로그인</a>
+			<a href="joinMember.html">회원가입</a>
+			<a href="findMember.html">아이디/비밀번호찾기</a>
+		</h3>
+		
+		<h1>로그인</h1>
+		
+		<form action = "result.html" method = "post">
+			아이디 : <input type = "text" name="memberId"> <br>
+			비밀번호 : <input type = "password" name="memberPw"> <br>
+			비밀번호 확인 : <input type = "password" name="memberPwConfirm"> 
+			
+			<input type = "checkbox" name="isVisablePassword"> 비밀번호 보이기 <br>
+			
+			이름 : <input type = "text" name="name"> <br>
+			휴대폰 : <input type = "text" name="mobile"> <br>
+			이메일 : <input type = "text" name="email1"> 
+						<input type = "text" name="email2">
+						
+			<select name = "selectEmail">
+				<option value = "none"> 선택 </option>
+				<option value = "@naver.com"> 네이버 </option>
+				<option value = "@gmail.com"> 구글 </option>
+				<option value = "@daum.net"> 다음 </option>
+				<option value = "userInput"> 직접 입력 </option>
+			</select>			
+			<br>
+			
+			<input type = "submit" >
+			<input type = "reset" >
+		
+		</form>
+	</body>
+	
+</html>

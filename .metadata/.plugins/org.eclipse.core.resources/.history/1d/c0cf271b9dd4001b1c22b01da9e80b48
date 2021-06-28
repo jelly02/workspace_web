@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>페이지 링크 예제</title>
+</head>
+	<body>
+	
+	<a name="top">top</a>
+	
+	
+		<h3>Web 관련 참고 사이트</h3>
+		
+		<!-- 순서 없는 목록 -->
+		
+		<ul>
+			<li><a href="https://www.w3.org/">w3.org</a> </li>
+			<li><a href="https://www.w3schools.com/"  target = "_blank">w3school</a></li>
+		</ul>
+		
+		<hr>
+		
+			<h3>로그인 폼 예제</h3>
+		<a name="login">login</a>
+			<table border="1" cellspacing="5px" cellpading="5px">
+					<form action = "result.html" method = "post">
+					
+					<!-- 아이디 -->
+					
+					<tr>
+						<td>아이디</td>
+						<td><input type = "text" name="memberId"></td>
+					</tr>
+					
+					<tr>
+						<td>비밀번호</td>
+						<td><input type = "password" name="memberPw"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type = "submit" value = "로그인" >
+							<input type = "reset" value = "취소">
+						</td>
+					</tr>
+					
+					
+				</form>
+			</table>
+			<hr>
+			
+			
+			<a name="findId">findId</a>
+			<h1>아이디 찾기</h1>
+		
+			<table border="1" cellspacing="5px" cellpading="5px">
+					<form action = "result.html" method = "post">
+					
+					<tr>
+						<td>이름</td>
+						<td><input type = "text" name="memberId"></td>
+					</tr>
+					
+					<tr>
+						<td>후대폰</td>
+						<td><input type = "password" name="memberPw"></td>
+					</tr>
+					
+					
+					
+					<tr>
+						<td colspan="2" align="center">
+							<input type = "submit" value = "로그인" >
+							<input type = "reset" value = "취소">
+						</td>
+					</tr>
+			
+					
+					</form>
+			</table>
+		
+		<a name="findId">findId</a>
+		<h1>비밀번호 찾기</h1>
+		
+			<table border="1" cellspacing="5px" cellpading="5px">
+					<form action = "result.html" method = "post">
+					
+					<!-- 아이디 -->
+					
+					<tr>
+						<td>아이디</td>
+						<td><input type = "text" name="memberId"></td>
+					</tr>
+					
+					<tr>
+						<td>비밀번호</td>
+						<td><input type = "password" name="memberPw"></td>
+					</tr>
+					
+					
+					
+					<tr>
+						<td colspan="2" align="center">
+							<input type = "submit" value = "로그인" >
+							<input type = "reset" value = "취소">
+						</td>
+					</tr>
+			
+					
+					</form>
+			</table>
+			
+			<hr>
+			
+			<h3>이미지 예제</h3>
+			
+				<img src = "img/bear1.jpg" title="케어베어스 너무 좋아" alter="케어베어스 입니당">
+				<img src = "img/bear2.jpg">
+				<img src = "img/bear3.jpg">
+	
+	</body>
+</html>

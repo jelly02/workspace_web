@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* form 양식 CSS : css/common_form.css */
+
+input.btn_submit{
+	
+}
+
+input.normal {
+	
+}
