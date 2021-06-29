@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Window 내장함수</title>
+
+	<script type="text/javascript">
+		//사용자 주문 수량 입력 받아 주문 내역 출력
+		
+		// 상품 가격 10,000 , 주문 수량 : 1~10
+		
+		var price = 10000;
+																	// 공백 초기화
+		var qty =  prompt("[안내] 주문하실 수량을 입력해주세요","");
+		console.log("주문수량 : "+qty);
+		console.log("주문수량 데이터 타입 : "+ typeof qty);
+		
+		if(qty != ""){
+	
+			if(isNaN(qty)){
+				alert("[오류] 주문 수량은 숫자로 입력해주세요.")
+			}else{
+				
+				//주문 수량 1~10개 검증
+				qty = parseInt(qty);
+				
+				if(qty < 1 || qty > 10){
+					alert("[오류] 주문 수량은 1~10개 이내로 입력하셔야합니다.");
+				}else{
+				
+						var orderPrice = price * qty;
+						
+						console.log("orderPrice : "+ orderPrice);
+						
+						// 변수만 선언하면 undefined
+						var message = "";
+						message += "=====주문 내역 정보=====";
+						message += "\n상품 가격 : "+price;
+						message += "\n주문 수량 : "+qty;
+						message += "\n주문 총액 : "+orderPrice;
+						message += "\n=================";
+						
+						message += "\n[안내] 주문하시겠습니까?";
+						
+						var isOrder = confirm(message);
+						
+						if(isOrder){
+							document.write("[주문 완료]");
+						}else{
+							document.write("[주문 취소]");
+						}
+				}
+			}		
+			
+		}else {
+			console.log("[오류] 주문 수량을 입력하지 않으셨습니다.")
+			alert("[오류] 주문 수량을 입력하지 않으셨습니다.");
+		}
+		
+		
+/*		var piece = prompt("주문하실 수량을 입력해주세요",0);
+		
+		if(peice.isNaN()){
+			 piece = prompt("[오류] 숫자만 입력해주세요. 주문하실 수량을 입력해주세요",0);	
+		} else {
+			//데이터가 숫자면
+			var order = parseInt(piece);
+			
+			var result = confirm("주문 하실 수량이 해당 숫자가 맞으십니까?"+order +"개");
+			
+			if(result){
+				confirm("주문해주셔서 감사합니다.");
+				  document.write("<h3> "+order+" </h3>")
+			}else{
+				// 주문 취소
+				var result2 = confirm("주문을 취소하시겠습니까?")
+				if(result2){
+					confirm("주문이 성공적으로 취소 되었습니다.");
+				}else { 
+					confirm("다시 주문해주세요");
+				}
+				
+			}
+		}
+*/		
+		
+	</script>
+</head>
+<body>
+	<h3>윈도우 내장 함수</h3>
+</body>
+</html>
