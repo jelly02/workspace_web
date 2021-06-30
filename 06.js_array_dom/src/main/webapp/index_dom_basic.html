@@ -1,0 +1,71 @@
+<!DOCTYPE >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DOM API BASIC</title>
+
+	<script type="text/javascript">
+	
+	window.onload = function() {
+		var takeElement = document.getElementById("title_1");
+		console.log(typeof(takeElement));
+		
+		var html = takeElement.innerHTML;
+		console.log(html);
+		
+		//html 동적 변경
+		takeElement.innerHTML = "<h1 style='color: black; background-color : yellow'>효경아 졸지마</h1>"; 
+		
+		//입력 항목 객체 가져오기 
+		var memberIdElement = document.sampleForm.memberId;
+
+		//아이디 객체 포커즈 위치 시키기
+		memberIdElement.focus();
+		
+	}
+	
+	//제목 감추기 함수
+	function titleHidden() {
+		alert('제목 감추기')
+		
+		//제목 element 객체 가져오기
+		var title = document.getElementById("title_1");
+		title.style.visibility = "hidden";
+	}
+	
+	//제목 보이기 함수
+	function titleVisible() {
+		alert('제목 보이기')
+		
+		//제목 element 객체 가져오기
+		var title = document.getElementById("title_1");
+		title.style.visibility = "visible";
+	}
+	
+	//제목 랜덤 색상 변경 보이게 해주는 함수
+	function titleVisibleRandomColor() {
+		alert('제목 랜덤 색상변경 보이기')
+	}
+	
+	
+	</script>
+
+
+</head>
+<body>
+	<h3 id ="title_1">DOM API BASIC</h3>
+	
+	<button onclick="titleHidden()">제목 감추기</button>
+	<button onclick="titleVisible()">제목 보이기</button>
+	<button onclick="titleVisibleRandomColor()">제목 랜덤 색상변경 보이기</button>
+	
+	<form action="#" method="get" name="sampleForm" id="sampleForm" >
+	
+		<div> 아이디 : <input type="text" name="memberId" placeholder = "아이디" ></div>
+		<div> 이름 : <input type="text" name="name" placeholder = "이름"></div>
+		<div> 마일리지 : <input type="text" name="mileage" placeholder = "마일리지"></div>
+		<div> <input type = "submit" value = "확인"></div>
+	</form>
+	
+</body>
+</html>

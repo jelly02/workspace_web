@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Array / Dom</title>
+	
+	<script type="text/javascript" src = "js/common.js"></script>
+	
+	<!-- class 이름이 같으면 충돌 남  -->
+<!-- 	<script type="text/javascript" src = "js/user_object_method_function.js"></script> -->
+<!--	<script type="text/javascript" src = "js/user_object_method_prototype.js"></script>-->
+<script type="text/javascript" src = "js/user_object_method_prototype_json.js"></script>
+	
+	<script type="text/javascript">
+	
+	//회원 객체 생성
+	var dto1= new Member("user01","김하나",1000);
+	
+	//멤버 마일리지 변경 
+	dto1.setMileage(50000);
+	dto1.setName("김주리");
+
+	//객체 정보 출력 
+	document.write(dto1.toString());
+	
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
