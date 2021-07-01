@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+
+	<script type="text/javascript">
+	
+		//윈도우 로드 이벤트 함수
+		window.onload = function() {
+			
+			//로드 됐을 때 딱 한 번만 호출됨
+			initForm();
+		}
+		
+		
+		//폼 초기화 함수 : 별도의 함수로 만들어서 필요할 때 언제든지 호출해서 재사용
+		function initForm() {
+			
+			// 폼 양식 > 입력 항목 이름
+//			document.joinForm.memberId.focus();
+			
+			// 폼 양식 > 입력항목 id
+			document.getElementById("memberId").focus();
+			
+		}
+		
+		//reset 버튼 이벤트
+		function clickReset() {
+			initForm();
+		}
+		
+		//입력 양식 데이터 검증 이벤트 
+		//1. 필수 입력 항목 
+		function checkForm(){
+			
+			var memberId = document.getElementById("memberId").value;
+			console.log(memberId);
+			
+			//아이디 칸에 입력하지 않았을 때
+			if(memberId == "" || memberId.trim().length == 0){
+				document.getElementById("memberId").focus;
+				document.getElementById("memberIdMsg").innerHTML = "아이디를 입력하세요";
+				document.getElementById("memberIdMsg").style.color = "red";
+				
+				//사용자가 입력한 데이터를 공백 문자열로 바꾸기
+				document.getElementById("memberId").value="";
+				
+				return false; //input type이 submit일 경우
+			}
+			
+			//검증이 완료가 되면, 사용자가 입력한 공백 데이터를 제거해야함
+			memberId = memberId.trim();
+
+			
+			var memberPw = document.getElementById("memberPw").value;
+			console.log(memberPw);
+			
+			//아이디 칸에 입력하지 않았을 때
+			if(memberPw == "" || memberPw.trim().length == 0){
+				document.getElementById("memberPw").focus;
+				document.getElementById("memberPwMsg").innerHTML = "비밀번호를 입력하세요";
+				document.getElementById("memberPwMsg").style.color = "red";
+				//사용자가 입력한 데이터를 공백 문자열로 바꾸기
+				document.getElementById("memberPw").value="";
+				
+				return false; //input type이 submit일 경우
+			}
+				
+			//검증이 완료가 되면, 사용자가 입력한 공백 데이터를 제거해야함
+			memberPw = memberPw.trim();
+			console.log("memberPw : "+memberPw.length);
+			
+			var memberPwConfirm =document.getElementById("memberPwConfirm").value;
+
+			
+			//아이디 칸에 입력하지 않았을 때
+			if(memberPwConfirm == "" || memberPwConfirm.trim().length == 0){
+				document.getElementById("memberPwConfirm").focus;
+				document.getElementById("memberPwConfirmMsg").innerHTML = "비밀번호를 한 번 더 입력하세요";
+				document.getElementById("memberPwConfirmMsg").style.color = "red";
+				//사용자가 입력한 데이터를 공백 문자열로 바꾸기
+				document.getElementById("memberPwConfirm").value="";
+				
+				return false; //input type이 submit일 경우
+			}
+			
+			//검증이 완료가 되면, 사용자가 입력한 공백 데이터를 제거해야함
+			memberPwConfirm = memberPwConfirm.trim();
+			
+			//비밀번호와 비밀번호 확인 텍스트가 동일한지 검증
+			
+			if(memberPw != memberPwConfirm){
+				document.getElementById("memberPw").focus;
+				document.getElementById("memberPwMsg").innerHTML = "비밀번호와 입력하신 비밀번호 확인과 내용이 다릅니다";
+				document.getElementById("memberPwMsg").style.color = "red";
+				
+				return false;
+			}
+		}
+		
+		
+			//비밀번호 표시 함수
+			function viewMemberPw() {
+				//비밀번호 표시 체크박스 객체 가져오기 isVisiblePassword
+				var isVisiblePasswordElement = document.getElementById("isVisiblePassword");
+				//비밀번호 객체 가져오기
+				var memberPwElement  = document.getElementById("memberPw");
+				//비밀번호 확인 개체 가져오기
+				var memberPwConfirmElement  = document.getElementById("memberPwConfirm");
+				
+					//체크박스 체킹 > checked == true
+					if(isVisiblePasswordElement.checked){
+						memberPwElement.type = "text";
+						memberPwConfirmElement.type  = "text";
+					}else {
+						//해제 < checked == false
+						memberPwElement.type = "password";
+						memberPwConfirmElement.type  = "password";
+					}
+				}
+				
+			//이메일 도메인 체크 함수
+			function changeEmail() {
+				
+				var email  = document.joinForm.selectEmail.value;
+			
+				if(email == "userInput" ){
+					document.getElementById("email2").readOnly = false;
+					document.getElementById("email2").focus;
+					document.getElementById("email2").value="";
+				}else{
+					document.joinForm.email2.value = document.joinForm.selectEmail.value;
+				}
+			}
+			
+			
+			//관심 분야 체크박스 전체 선택 함수
+			/*
+				(1) 관심분야 체크박스 객체 가져오기
+				(2) checkboxx item 갯수만큼 반복
+				(3) checked 되어 있지 않으면 클릭 (clicked() 체크 설정 )
+			*/
+			function checkAll() {
+				
+			     var interestElement = document.joinForm.interest;
+			       console.log("typeof : interestElement ", typeof interestElement);
+			       console.log("interestElement.length>>", interestElement.length);
+			       
+			       console.log("interestElement[index].checked");
+			       
+			       for(index = 0; index<interestElement.length; index++){
+			          if(!interestElement[index].checked){   // 체크되어있지 않은 상태라면
+			             interestElement[index].click();
+			          }
+			       }   
+			}
+			
+			//관심 분야 체크박스 전체 해제 함수
+			function clearAll() {
+
+				var interestElement = document.joinForm.interest;
+				
+				for(index = 0; index <interestElement.length; index++){
+					if(interestElement[index].checked){
+						interestElement[index].click(); 
+					}
+				}
+			}
+			
+			function introLengthCheck(takeData) {
+				
+				var introLengthCheckElement = document.getElementById("introLength");
+				introLengthCheckElement.innerHTML = takeData.length;
+				
+			}
+			
+			function openIdCheckWindow() {
+				
+				var specs = "width=400, height=300, top=300, left=500";
+				var idWin = window.open("duplicateMemberId.html","_blank",specs);
+			}
+			
+</script>
+
+</head>
+<body>
+
+
+		
+		<h2>< 회원가입 ></h2>
+
+<div>
+		<form action = "result.html" method = "post" name="joinForm">
+			
+			<div>
+				<span>아이디</span>
+				<input type = "text" name="memberId" tabindex="1"  id="memberId" >
+				<input type = "button" value="아이디 중복" onclick="openIdCheckWindow()">
+				<span id = "memberIdMsg"></span>
+			</div>
+			
+			<div>
+				<span>비밀번호</span>
+				<input type = "password" name="memberPw"  tabindex="3" id="memberPw">
+				<span id = "memberPwMsg"></span>
+			</div>
+			
+			<div>
+				<span>비밀번호 확인</span>
+				<input type = "password" name="memberPwConfirm"  id="memberPwConfirm">
+				<input type = "checkbox" name="isVisiblePassword"  id="isVisiblePassword" onclick ="viewMemberPw()">비밀번호 표시
+				<span id = "memberPwConfirmMsg"></span>
+			</div>
+			
+			<div>
+				<span>이름</span>
+				<input type = "password" name="name"  tabindex="2">
+			</div>
+			
+			<div>
+				<span>휴대폰</span>
+				<input type = "password" name="mobile">
+			</div>
+			
+			<div>
+				<span>이메일</span>
+				<input type = "text" name="email1"> 
+				<input type = "text" name="email2" id="email2"  readonly> 
+				<select name = "selectEmail" id = "selectEmail" onchange = "changeEmail()" >
+						<option value = "none"> 선택 </option>
+						<option value = "@naver.com"> 네이버 </option>
+						<option value = "@gmail.com"> 구글 </option>
+						<option value = "@daum.net"> 다음 </option>
+						<option value = "userInput"> 직접 입력 </option>
+				</select>			
+			</div>
+			
+	
+				<!-- 관심분야 -->
+					<div>
+						<span>관심분야</span>
+						<span>
+								<input type ="checkbox" name="interest" value="1"> 1
+								<input type ="checkbox" name="interest" value="2"> 2
+								<input type ="checkbox" name="interest" value="3"> 3
+								<input type ="checkbox" name="interest" value="4"> 4
+								<input type ="checkbox" name="interest" value="5"> 5
+						</span>
+					</div>
+						<div>
+							<input type ="button" name="전체 선택" onclick="checkAll()" value="전체 선택">
+							 <input type ="button" name="전체 해제" onclick="clearAll()" value="전체 해제">
+						</div>
+					
+					<div>
+						<span>자기소개 (200자 이내 입력)</span>
+						<div id="introLength">0</div>
+						
+						<textarea cols="60" rows="5" name = "intro" id="intro" onkeydown="introLengthCheck(this.value)"></textarea>
+						
+					</div>
+					
+				<div>
+					<span>
+						<input type = "submit" value = "회원가입" class="normal btn " onclick="return checkForm();">
+						<input type = "reset" value = "취소"  class="normal btn" onclick="clickReset() ">
+					</span>
+				</div>
+		</form>
+</div>
+</body>
+</html>
