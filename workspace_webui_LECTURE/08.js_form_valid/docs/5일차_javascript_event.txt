@@ -1,0 +1,293 @@
+## -----------------------------------
+## JavaScript
+## -----------------------------------
+
+## TODO : 
+## 내장객체 : Array
+## Host Object(User Object) : 사용자 정의객체
+## DOM(Document Object Model) : 
+	>> 문서(html) tag, attribute(element, node) 객체화 시켜서 접근 API
+## Event Handling	
+
+
+## version : 
+-- ES5
+-- ES6
+
+## 변수 선언 방법
+-- ES5
+	>> var 변수명 = 값;
+	>> var 변수명; // undefined
+	>> 변수명 = 값;
+	
+-- ES6
+	>> let 변수명 = 값;
+	>> const 상수명 = 상수값;
+
+## 변수 종류
+-- 전역변수
+	>> function 외부에 선언한 모든 변수
+	>> function 내부에 선언한 "전역변수명=값" | "let 전역변수명=값" 
+	
+-- 지역변수
+	>> function 내부에 선언한 "var 지역변수명" | "let 지역변수명"
+
+## undefined, null
+
+## 냬장객체
+-- 객체 구성 : 속성(property), 메서드(operation), event handler
+-- tree 구조
+	>> Window(window) : 최상위객체, window 생략 가능
+	>> Document(document)
+		=> document.write("body tag 내부에 올수있는 모든것 - 동적화면구성가능");
+		
+	>> Form : <form action="" method="" name="폼이름" id="form-id-name">
+		=> 입력항목 name="" id="" : <input type="text" name="" id="입력항목-id-name">
+		
+	>> Image
+	>> Location(location)
+	>> ....
+
+## 내장함수
+-- Window(window) 
+-- alert() : 확인
+-- confirm() : 확인, 취소
+-- prompt() : 입력데이터
+-- isNaN() : 숫자아니면 true
+-- parsetInt() : 정수형변환
+-- parseFloat() : 실수형변환
+-- eval() : 수식변환, json 객체변환
+
+## 타입체킹
+-- typeof 데이터
+-- typeof(데이터)
+
+## 사용자 정의 함수
+-- 모듈화 개념의 함수
+-- 생성자 함수(Host Object / User Object)
+-- 익명함수(이름이 없는 함수 : anonymous function => event handling)
+
+-- 선언방법:
+	function 함수명([arg1, arg2, argX]) {
+		[ return; ]
+		[ return value; ]
+	}
+
+-- 호출방법:
+	함수명();
+	함수명(data1, dataX)
+	변수명 = 함수명();
+
+## 자바스크립트 선언방법
+1. 내부파일
+	<script type="text/javascript">
+		// 코드 작성
+	</script>
+2. 외부파일
+	<script type="text/javascript" src="외부파일.js"></script>
+	
+	=> 외부파일.js : 외부파일 정상 연결 확인 코드 작성
+	alert("외부파일.js 로드"); 
+
+	
+## 내장객체 : Array
+-- 다형성, 자동 확장
+-- 생성방법 :
+1. 	JS Array 객체 사용
+	var array = new Array();	
+	var array = new Array(length);
+	var array = new Array(1, 2, 10, 100, "hello", new Date());
+	
+2. JSON(JavaScript Object Notation) 배열	
+	var array = [value1, valueX];
+	
+-- 배열요소 접근 : 
+	>> 배열명[index]	
+	>> index 시작 : 0번 부터 시작
+
+-- 배열크기 : 배열명.length
+	
+	
+## 함수명 등 이름 지정시 주의사항	
+-- 사용자 정의 함수명과 내장함수명 동일한 경우(충돌문제)
+
+	
+## Host Object(User Object) : 사용자 정의객체
+-- this : 현재 객체를 지칭하는 참조변수, 자동 생성 제공
+-- 클래스 구성요소 : 멤버변수(속성), 메서드(기능)
+
+-- 패키지 선언방법
+	>> top패키지명 = {}
+	>> top패키지명.sub패키지명 = {}
+
+-- 사용자 객체 정의 방법
+	>> 클래스이름 : 대문자시작
+	
+	1.  
+	function 클래스이름(매개변수명1, 매개변수명x) {
+		// 1-1) 멤버변수 선언 및 초기화 수행
+		this.멤버변수명1 = 매개변수명1;
+		this.멤버변수명x = 매개변수명x;
+		
+		// 1-2) 멤버메서드를 바인딩(연결 선언), 바인딩 메서드명만 표기해야함, 
+		// 즉, 멤버메서드명(); 메서드를 수행한 결과를 할당(주의사항)
+		this.멤버메서드명 = 멤버메서드명;
+		this.set멤버변수명1 = set멤버변수명1;
+	}
+
+## 멤버메서드 선언 방법
+	// 2-1) 멤버메서드 함수 선언 : 클래스와 바인딩이 되면 클래스의 멤버변수를 this로 접근 가능
+	function toString() {
+		return this.멤버변수명1 + ", " + this.멤버변수명x;
+	}
+	function set멤버변수명1(매개변수명1) {
+		this.멤버변수명1 = 매개변수명1;
+	}
+
+	// 2-2) prototype 속성 이용해서 함수 선언 : 클래스에 멤버메서드 바인딩 별도로 하지 않아도 됨
+	>> 형식 : 클래스명.prototype.멤버메서드명 = function() { // 메서드 수행문 }
+
+	// 2-3) prototype + JSON 형식을 이용한 멤버메서드 선언 방법, 다중 메서드 선언시 편리
+	>> JSON 기본형식 : {key1:value, key2:value}
+	>> 형식 : 
+		클래스명.prototype = {
+			멤버메서드명:function(매개변수명) { // 수행문 },
+			멤버메서드명:function(매개변수명) { // 수행문 },
+			멤버메서드명:function(매개변수명) { // 수행문 }
+		}
+
+
+## DOM(Document Object Model) API
+-- ML(Markup Language)
+	>> html
+	>> xml
+	
+-- element 형식 
+	1. <tag attr="value" attr="value>body contents</tag>
+	2. <tag attr="value" attr="value />
+
+-- Node
+	>> Element
+	>> Attr
+	>> Text
+	
+	>> NodeList
+	
+## DOM 객체 가져오기
+-- ES5 기반
+	>> id 이용방법 : 
+		=> docuement.getElementById("id-name");
+		=> Node
+	
+	>> class 이용방법
+		=> docuement.getElementsByClassName("class-name");
+		=> NodeList (Array)
+
+	>> tag 이용방법
+		=> docuement.getElementsByTagName("tag-name");
+		=> NodeList (Array)
+
+## Element 주요 속성
+-- innerHTML
+	>> set 변경 : element 내부에 있는 html 내용을 변경
+	>> get : html 조회
+
+-- innerText
+	>> set : element 내부에 있는 plain-text
+	>> get 
+
+
+## 이벤트 처리 
+-- 1. Event : 울고있을때, 졸고있을때
+	>> 버튼 클릭했을때, 이미지에 마우스가 갔을때, 윈도우가 로드됬을때
+	>> click, hover, load, ....
+	
+-- 2. Event Source : 김기영, 유건
+	>> 버튼(Button), 이미지(Image), 윈도우(window), ...
+	
+-- 3. Event Handler : 왜우냐.. 왜그래..속상해..처리, 자라..야..일어나..
+	>> on이벤트
+	>> onClick="함수명()"
+	>> onClick=function() { // 수행문; }
+
+## Form 객체 DOM 가져오기
+-- name 이용 방법
+	>> document.폼이름;
+	>> var formElement = document.sampleForm;
+	
+-- id 이용 방법
+	>> document.getElementById("폼id명");
+	>> var formElement = document.getElementById("sampleForm");
+	
+-- 예시:
+	<form name="sampleForm" id="sampleForm"></form>
+
+
+## Form 객체의 입력항목 DOM 가져오기
+-- name 이용 방법
+	>> document.폼이름.입력항목이름;
+	>> var inputElement = document.sampleForm.memberId;
+	>> 입력데이터 가져오기 : inputElement.value;
+	
+-- id 이용 방법
+	>> var inputElement = document.getElementById("memberId");
+	>> 입력데이터 가져오기 : inputElement.value;
+	
+-- 예시:
+	<form name="sampleForm" id="sampleForm">
+		<input type="text" name="memberId" id="memberId" >
+	</form>
+
+## 엘리먼트 스타일 적용하기
+1. style 이용방법
+	>> 엘리먼트객체.style.propertyName = "new-value";
+	>> propertyName 지정 규칙
+		=> 단일언어는 그대로 사용 : color, width, height
+		=> 합성어는 소문자+대문자시작 규칙 적용 : background-color (backgroundColor), font-size (fontSize)
+	
+	>> 예시: 
+		<h1 style='color:red;background-color:yellow;'>
+	
+2. css 선언해놓고, class 이용방법
+	>> 엘리먼트객체.className = "new-class-name1 new-class-name2"
+	>> 예시:
+		<h1 class='title color bold'>
+
+
+## DOM 감추기 / 보이기
+-- display : 영역과 엘리먼트도 함께 감춤
+	>> block
+	>> none
+	
+-- visibility : 영역은 유지한체 엘리먼트만 감춤	
+	>> visible
+	>> hidden
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User Function</title>
+<!-- js : internal -->
+<script type="text/javascript">
+	/* 함수 선언 */
+	function hello() {
+		document.write("<h3>안녕</h3>");
+	}
+	
+	/* 2개의 숫자 데이터를 입력받아서 시작단 ~ 종료단까지의 구구단 출력 함수 */
+	function gugudan(startDan, endDan) {
+		
+	}
+</script>
+</head>
+<body>
+<h3>User Function</h3>
+
+<script type="text/javascript">
+	/* 함수 호출 수행 */
+	hello();
+	hello();
+	hello();
+	hello();
+	
+</script>	
+</body>
+</html>

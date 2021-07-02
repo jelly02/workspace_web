@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MMS</title>
+<!-- css: external -->
+<link type="text/css" rel="stylesheet" href="css/common_form.css">
+</head>
+<body>
+<!-- logo menu -->
+<div class="logo_menu"><img src="img/logo.png"></div>
+
+<!-- top menu -->
+<div class="top_menu">
+	<a href="login.html">로그인</a><span class="seperator">|</span>
+	<a class="color bold" href="joinMember.html">회원가입</a><span class="seperator">|</span>
+	<a class="bold" href="findMember.html">아이디/비밀번호찾기</a>
+</div>
+
+<!-- 컨텐츠 제목 -->
+<h1>[아이디찾기]</h1>
+<form action="result.html" method="post">
+	<!-- 이름 -->
+	<div class="input_row">
+		<span class="input_label" style="display:inline-block;width:80px;">이름</span>
+		<input type="text" name="name">
+	</div>
+	
+	<!-- 휴대폰 -->
+	<div class="input_row">
+		<span class="input_label" style="display:inline-block;width:80px;">휴대폰</span>
+		<input type="text" name="mobile">
+	</div>
+	
+	<!-- 이메일 -->
+	<div class="input_row">
+		<span class="input_label" style="display:inline-block;width:80px;">이메일</span>
+		<input type="text" name="email">
+	</div>
+	
+	<!-- submit -->
+	<div class="input_row input_btn">
+		<input type="submit" value="아이디찾기" class="btn_submit normal">
+	</div>
+</form>	
+	
+<hr>	
+<h1>[비밀번호찾기]</h1>
+<table>
+<form action="result.html" method="post">
+	<!-- 아이디 -->
+		<td>아이디</td>
+		<td><input type="text" name="memberId"></td>
+	</tr>
+
+	<!-- 이름 -->
+	<tr>
+		<td>이름</td>
+		<td><input type="text" name="name"></td>
+	</tr>
+	
+	<!-- 휴대폰 -->
+	<tr>
+		<td>휴대폰</td>
+		<td><input type="text" name="mobile"></td>
+	</tr>
+	
+	<!-- 이메일 -->
+	<tr>
+		<td>이메일</td>
+		<td><input type="text" name="email"></td>
+	</tr>
+
+	<!-- submit -->
+	<tr>
+		<td colspan="2" align="center"><input type="submit" value="비밀번호찾기"></td>
+	</tr>
+</form>		
+</table>
+
+<!-- footer menu -->
+<div class="footer_menu">&copy; work.com</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

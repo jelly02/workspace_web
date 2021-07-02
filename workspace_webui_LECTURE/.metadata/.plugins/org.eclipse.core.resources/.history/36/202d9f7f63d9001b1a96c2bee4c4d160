@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DOM API basic</title>
+<script type="text/javascript">
+	var takeElement = document.getElementById("title_1");
+	console.log(typeof(takeElement));
+	var html = takeElement.innerHTML;
+	console.log("html >> ", html);
+	
+</script>
+</head>
+<body>
+<h3 id="title_1">DOM API basic</h3>
+</body>
+</html>

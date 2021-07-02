@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>아이디중복</title>
+<style type="text/css">
+	div { margin: 10px 0; }
+</style>
+
+<script type="text/javascript">
+	/* 회원들의 아이디 정보를 배열 선언 및 저장 구조 */
+	var memberIdArray = ["user01", "user02", "user03"];
+	
+	/* 윈도우 로드 이벤트 */
+	window.onload = function() {
+		// 부모창의 아이디객체 가져오기
+		var parentMemberIdElement = window.opener.document.getElementById("memberId");
+		
+		// 자식창의 아이디객체 가져오기
+		var childMemberIdElement = document.getElementById("memberId");
+		
+		// 부모창의 입력아이디를 자식창의 입력아이디로 초기화 변경
+		childMemberIdElement.value = parentMemberIdElement.value;
+		
+		// 자식창의 아이디 포커스
+		childMemberIdElement.focus();
+		
+		// 아이디 사용하기 버튼 비활성화
+		document.getElementById("btn_use_memberId").disabled = true;
+	}
+
+	/* 아이디 중복여부 검증 */
+	function idCheck() {
+		// 아이디 입력데이터 가져오기
+		var memberId = document.getElementById("memberId").value;
+		
+		// 메세지 출력객체 가져오기
+		var memberIdMsgElement = document.getElementById("memberIdMsg");
+		
+		// memberIdArray 크기만큼 반복 비교하면서 아이디 존재유무 체킹
+		for (index = 0; index < memberIdArray.length; index++) {
+			if (memberIdArray[index] == memberId) {
+				memberIdMsgElement.innerHTML = "사용불가 아이디입니다.";
+				memberIdMsgElement.style.color = "red";
+				document.getElementById("memberId").focus();
+				return;
+			}
+		}
+		
+		memberIdMsgElement.innerHTML = "사용가능 아이디입니다.";
+		memberIdMsgElement.style.color = "green";
+		
+		// 아이디 사용하기 버튼 활성화
+		document.getElementById("btn_use_memberId").disabled = false;
+		
+	}
+	
+	/* 아이디 입력시 아이디중복검증 메세지 지우기 */
+	function clearMsg() {
+		// 메세지 출력객체 가져오기
+		document.getElementById("memberIdMsg").innerHTML = "";
+		
+		// 아이디 사용하기 버튼 비활성화
+		document.getElementById("btn_use_memberId").disabled = true;
+	}
+</script>
+</head>
+<body>
+<!-- 
+	아이디 중복 입력 화면 구현 
+	1. 아이디 입력
+	2. 수행결과 메세지 출력 영역 : 사용가능한 아이디입니다. 사용불가능한 아이디입니다.
+	3. 아이디중복 확인버튼
+	4. 아이디사용하기 확인버튼
+	5. 창닫기 확인버튼
+-->
+<h3>아이디 중복</h3>
+<div>
+<form action="result.html" method="post" name="idCheckForm" id="idCheckForm">
+	<!-- 아이디 -->
+	<div>
+		<div class="input_title">아이디</div>
+		<div>
+			<input type="text" name="memberId" id="memberId" onkeydown="clearMsg()">
+			<input type="button" value="아이디중복 확인" onclick="idCheck()">
+		</div>
+		
+		<div id="memberIdMsg">메세지출력영역</div>
+	</div>
+	
+	<div>
+		<input type="button" id="btn_use_memberId" value="아이디 사용하기" onclick="useMemberId()">
+		<input type="button" value="창닫기" onclick="window.close();">
+	</div>
+		
+</form>
+</div>
+</body>
+</html>

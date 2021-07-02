@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지뷰</title>
+<!-- css : internal -->
+<style type="text/css">
+	/* 
+		-- 모든 .jpg 이미지 적용
+		-- img/flower 
+		-- flower
+	*/
+
+	/* 이미지 확장자가 .jpg 처리 */
+	img[src$=".jpg"] {
+		width: 120px;
+		height: 210px;
+	}
+	
+	/* 이미지에 마우스가 왔을때 처리 */
+	img:hover {
+	
+	}
+</style>
+</head>
+<body>
+<h3>이미지뷰</h3>
+<img src="img/flower_01.jpg">
+<img src="img/flower_02.jpg">
+<img src="img/flower_03.jpg">
+<img src="img/flower_04.jpg">
+<img src="img/flower_05.jpg">
+<img src="img/flower_06.jpg">
+<img src="img/flower_07.jpg">
+<img src="img/flower_08.jpg">
+<img src="img/flower_09.jpg">
+<img src="img/flower_10.jpg">
+
+</body>
+</html>

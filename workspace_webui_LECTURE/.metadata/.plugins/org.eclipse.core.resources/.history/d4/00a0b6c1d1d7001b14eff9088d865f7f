@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>로그인 | MMS</title>
+<!-- css: external -->
+<link type="text/css" rel="stylesheet" href="css/common_form.css">
+<!-- css: internal -->
+<style type="text/css">
+	table, tr, td, th {
+		border: solid 1px orange;
+		margin: 5px;
+		padding: 5px;
+	}
+	
+	div.top_menu {
+		text-align: right;
+	}
+	
+	div.top_menu a {
+		text-decoration: none;
+		font-size: 11px;
+	}
+	
+	span.seperator {
+		margin: 0 3px;
+		font-size: 0.7em;
+		color: orange;
+	}
+	
+	a.color {
+		color: orange;
+	}
+	
+	a.bold {
+		font-weight: bold;
+	}
+	
+	a:link {text-decoration: none;}
+	a:active {text-decoration: underline; color: red;}
+	a:visited {text-decoration: none; color: gray;}
+	a:hover {text-decoration: none; background-color: yellow; color: red;}
+		
+</style>
+</head>
+
+<body>
+<a href="index.html"><img src="img/logo_30.png"></a>
+
+<h3>회원관리시스템</h3>
+<hr>
+<div class="top_menu">
+	<a href="login.html">로그인</a><span class="seperator">|</span>
+	<a class="color bold" href="joinMember.html">회원가입</a><span class="seperator">|</span>
+	<a class="bold" href="findMember.html">아이디/비밀번호찾기</a>
+</div>
+<hr>
+
+<h1>[로그인]</h1>
+
+<table class="form_table">
+<form action="result.html" method="post">
+	<!-- 아이디 -->
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="memberId" autofocus="autofocus"></td>
+	</tr>
+
+	<!-- 비밀번호 -->
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="password" name="memberPw"></td>
+	</tr>
+
+	<!-- submit / reset -->
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="로그인" class="btn_submit" >
+			<input type="reset" value="취소" class="normal">
+		</td>
+	</tr>
+</form>	
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

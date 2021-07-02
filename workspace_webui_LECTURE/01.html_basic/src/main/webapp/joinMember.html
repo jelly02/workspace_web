@@ -1,0 +1,74 @@
+<!-- 문서타입 선언문 : html4 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- root tag -->
+<html lang="ko">
+<head>
+	<!-- mime-type, character encodig 설정 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<!-- 문서(document) 제목, 즐겨찾기시에 기본 텍스트 -->
+	<title>로그인 | MMS</title>
+</head>
+
+<!-- 브라우저에 서비스(보여지는) 내용 -->
+<body>
+<!-- 이미지 로고 -->
+<a href="index.html"><img src="img/logo_30.png"></a>
+
+<h3>회원관리시스템</h3>
+<hr>
+<a href="login.html">로그인</a>|
+<a href="joinMember.html">회원가입</a>|
+<a href="findMember.html">아이디/비밀번호찾기</a>
+<hr>
+
+<h1>[회원가입]</h1>
+<form action="result.html" method="post">
+	아이디: <input type="text" name="memberId"><br>
+	비밀번호: <input type="password" name="memberPw"><br>
+	비밀번호확인: <input type="password" name="memberPwConfirm">
+	<input type="checkbox" name="isVisablePassword">비밀번호 보이기<br>
+	이름: <input type="text" name="name"><br>
+	휴대폰: <input type="text" name="mobile"><br>
+	이메일: <input type="text" name="email"><br>
+	이메일: 
+	<input type="text" name="email1">
+	<input type="text" name="email2">
+	<select name="selectEmail">
+		<option value="none">= 선택 =</option>
+		<option value="@naver.com">네이버</option>
+		<option value="@gmail.com">구글</option>
+		<option value="userInput">직접입력</option>
+	</select>
+	<br>
+	
+	<p>
+	<input type="submit" value="회원가입">
+	<input type="reset" value="취소">
+</form>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

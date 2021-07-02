@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* common.css : 공통 */
+
+/* li 아이템 목록 */
+ul.menu_item_1, ol.menu_item_1 {
+	list-style: none;
+	padding: 5px 0 5px 5px;;
+	margin-bottom: 5px;
+}

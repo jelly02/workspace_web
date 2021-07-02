@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;05.css_basic_LECTURE&apos; to &apos;05.css_MMS&apos;" description="Rename resource &apos;05.css_basic_LECTURE&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/05.css_basic_LECTURE" name="05.css_MMS" stamp="1624867380214" updateReferences="true"/>
+</session>

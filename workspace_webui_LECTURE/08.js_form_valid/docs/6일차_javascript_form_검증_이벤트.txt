@@ -1,0 +1,133 @@
+## -----------------------------------
+## JavaScript : 이벤트, FORM 제어
+## -----------------------------------
+
+## 입력양식 데이터 검증
+	>> 입력항목 이벤트처리
+	
+## 새창열기	 / 창닫기
+	>> 아이디 중복 검색
+	>> 이미지 클릭 => 상세보기
+	
+
+## DOM API 
+	>> id, class, tag-name
+	>> Node(단일), NodeList(다중:배열), Element, Attr, Text
+
+-- ES5
+	>> id:	document.getElementById("id-name"); => Node
+	>> class: document.getElementsByClassName("class-name") => NodeList
+	>> tag-name: document.getElementsByTagName("tag-name") => NodeList
+
+-- ES6
+	>> document.querySelector("selector"); => Node
+	>> document.querySelectorAll("selector"); => NodeList
+
+	>> id:	document.querySelector("#id-name");; => Node
+	>> class: document.querySelectorAll(".class-name") => NodeList
+	>> tag-name: document.querySelectorAll("tag-name") => NodeList
+
+
+## DOM CSS(스타일) 적용
+-- <div style="font-size:12px;color:red;">...</div>
+
+-- style
+	>> lookup-object.style.propertyName = "value"
+	>> font-size => fontSize
+	>> color => color
+	
+-- css 사전 선언 하고 class 지정
+	>> lookup-object.className = "class-name1 class-name2"
+	
+-- 속성추가 : setAttribute("속성명", "속성값") 
+	>> lookup-object.setAttribute("style" , "font-size:12px;color:red;");
+	>> lookup-object.setAttribute("class" , "class-name1 class-name2");
+	
+## DOM 보이기 / 감추기 속성(property)
+-- visibility : 영역은 유지한체 내용(컨테츠) 제거
+	>> visible
+	>> hidden
+	
+-- display : 영역도 함께 제거
+	>> block
+	>> none
+
+
+## 입력양식(form) 입력데이터 가져오기
+-- 입력데이터의 타입은 string => 데이터길이 : length 속성
+
+-- document.getElementById("form-id").input-name.value => input data
+-- document.form-name.input-name.value => input data
+-- document.querySelector("#form-id").input-name.value => input data
+
+-- document.getElementById("input-id").value => input data
+	
+	
+## checkbox가 단일 항목 => Node
+## checkbox가 여러개 항목 => NodeList(배열)
+	
+## 폼양식 데이터 검증
+1. submit
+	>> 	onclick="return 데이터검증함수명();"
+	
+	>> 	function 데이터검증함수명() {
+			if(데이터검증조건올바르지않으면) {
+				....
+				return false;
+			}
+			
+			..
+		}
+		
+## 비밀번호표시 체크박스 이벤트 처리
+-- 체크상태 : 비밀번호, 비밀번호확인 type="text"
+-- off상태 : 비밀번호, 비밀번호확인 type="password"
+
+
+## 이메일 도메인을 선택하면 해당 도메인 주소를 이메일주소로 자동 초기화
+-- select 
+	>> onchange
+	>> <option>네이버</option>
+	>> <option value="@naver.com">네이버</option>
+	
+-- 읽기전용 : readOnly
+	=> <input type="text" readOnly>
+	=> <input type="text" readOnly="readOnly">
+	
+## 새창열기 
+-- window.open(URL, name, specs, replace)	
+-- specs
+	=> key=value,key=value
+	=> width=400,heigh=300,scrollbar=no
+-- 부모창 접근
+	=> window.opener.document.getElementById("부모id");
+	
+	
+## DOM(Document Object Model) API
+-- <tag attribute-name="value">plain-text</tag>
+
+-- Document
+-- Node
+-- Element Node: <tag>
+-- Text Node : plain-text
+-- attr Node : attribute-name
+
+document.getElementById(id)	: Find an element by element id
+document.getElementsByTagName(name)	: Find elements by tag name >> NodeList (배열)
+document.getElementsByClassName(name)	: Find elements by class name
+
+document.createElement(element)	Create an HTML element
+document.createTextNode("plain-text")	Create an HTML textnode
+
+document.removeChild(element)	Remove an HTML element
+document.appendChild(element)	Add an HTML element
+document.replaceChild(new, old)	Replace an HTML element
+document.write(text)		    Write into the HTML output stream
+
+-- 마지막 자식 엘리먼트객체
+>> 부모엘리먼트.lastChild
+>> <ul id="xx"> 부모객체의 마지막 <li> 객체를 가져와서 삭제 : document.removeChild(마지막li-element)
+
+-- 첫번째 자식 엘리먼트객체
+>> 부모엘리먼트.firstChild	
+	

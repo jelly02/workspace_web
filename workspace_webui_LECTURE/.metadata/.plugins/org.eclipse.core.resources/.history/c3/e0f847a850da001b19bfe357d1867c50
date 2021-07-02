@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>동적 화면만들기</title>
+<script type="text/javascript">
+	var contentsElement = null;
+	var itemCount = 0;
+	
+	window.onload = function() {
+		contentsElement = document.getElementById("contents");
+	}
+	
+	function addItem() {
+		++itemCount;
+		var buttonElement = document.createElement("button");
+		var buttonText = document.createTextNode("추가품목" + itemCount);
+		var parentElement = document.getElementById("contents");
+		
+		buttonElement.appendChild(buttonText);
+		parentElement.appendChild(buttonElement);
+	}
+	
+	function removeItem() {
+		if (itemCount > 0) {
+			--itemCount;
+			var parentElement = document.getElementById("contents");
+			var lastChileElement = parentElement.lastChild;
+			
+			parentElement.removeChild(lastChileElement);
+		} else {
+			alert("삭제할 품목이 없습니다.");
+		}
+	}
+</script>
+</head>
+<body>
+
+<button onclick="addItem();">추가</button>
+<button onclick="removeItem();">삭제</button>
+<hr>
+
+<div id="contents"></div>
+</body>
+</html>

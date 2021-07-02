@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>로그인 | MMS</title>
+<!-- css : external -->
+<link type="text/css" rel="stylesheet" href="css/common_form.css">
+</head>
+
+<body>
+<a href="index.html"><img src="img/logo_30.png"></a>
+
+<h3>회원관리시스템</h3>
+<hr>
+<a href="login.html">로그인</a>|
+<a href="joinMember.html">회원가입</a>|
+<a href="findMember.html">아이디/비밀번호찾기</a>
+<hr>
+
+<h1>[회원가입]</h1>
+<table border="1" cellspacing="5px" cellpadding="5px">
+<form action="result.html" method="post">
+	<!-- 아이디 -->
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="memberId"></td>
+	</tr>
+	
+	<!-- 비밀번호 -->
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="password" name="memberPw"></td>
+	</tr>
+	
+	<!-- 비밀번호확인 -->
+	<tr>
+		<td>비밀번호확인</td>
+		<td>
+		<input type="password" name="memberPwConfirm">
+		<input type="checkbox" name="isVisablePassword">비밀번호 보이기
+		</td>
+	</tr>
+	
+	<!-- 이름 -->
+	<tr>
+		<td>이름</td>
+		<td><input type="text" name="name"></td>
+	</tr>
+	
+	<!-- 휴대폰 -->
+	<tr>
+		<td>휴대폰</td>
+		<td><input type="text" name="mobile"></td>
+	</tr>
+	
+	<!-- 이메일 -->
+	<tr>
+		<td>이메일</td>
+		<td>
+		<input type="text" name="email1">
+		<input type="text" name="email2">
+		<select name="selectEmail">
+			<option value="none">= 선택 =</option>
+			<option value="@naver.com">네이버</option>
+			<option value="@gmail.com">구글</option>
+			<option value="userInput">직접입력</option>
+		</select>
+		</td>
+	</tr>
+	
+	<!-- submit / reset -->
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="회원가입">
+			<input type="reset" value="취소">
+		</td>
+	</tr>
+</form>	
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

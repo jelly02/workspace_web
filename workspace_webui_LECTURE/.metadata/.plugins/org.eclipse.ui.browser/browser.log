@@ -1,0 +1,54 @@
+
+6월 23, 2021 12:49:06.23 NEW SESSION
+6월 23, 2021 12:49:06.24 [14200:4092:0623/124906.019:ERROR:device_event_log_impl.cc(214)] [12:49:06.019] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 23, 2021 14:52:16.287 [15032:15248:0623/145216.284:ERROR:device_event_log_impl.cc(214)] [14:52:16.284] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 23, 2021 14:52:16.288 [15032:15248:0623/145216.288:ERROR:device_event_log_impl.cc(214)] [14:52:16.288] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+6월 23, 2021 16:19:59.316 NEW SESSION
+6월 23, 2021 16:19:59.316 [12684:9812:0623/161959.314:ERROR:device_event_log_impl.cc(214)] [16:19:59.314] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 23, 2021 19:00:56.731 [15092:4892:0623/190056.730:ERROR:device_event_log_impl.cc(214)] [19:00:56.730] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+6월 24, 2021 09:05:33.95 NEW SESSION
+6월 24, 2021 09:05:33.95 [8528:13748:0624/090533.093:ERROR:device_event_log_impl.cc(214)] [09:05:33.093] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 24, 2021 09:38:17.440 [10092:12804:0624/093817.439:ERROR:device_event_log_impl.cc(214)] [09:38:17.438] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 24, 2021 10:10:13.499 [11788:8480:0624/101013.498:ERROR:device_event_log_impl.cc(214)] [10:10:13.498] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 24, 2021 11:36:35.456 [11788:5588:0624/113635.455:ERROR:mcs_client.cc(755)] Received close command, resetting connection.
+6월 24, 2021 12:37:52.505 [11788:8480:0624/123752.505:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:37:53.509 [11788:8480:0624/123753.509:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:00.14 [11788:8480:0624/123800.014:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:07.257 [11788:8480:0624/123807.256:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:11.334 [11788:8480:0624/123811.334:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:16.956 [11788:8480:0624/123816.955:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:22.574 [11788:8480:0624/123822.573:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:29.239 [11788:8480:0624/123829.238:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:30.278 [11788:8480:0624/123830.277:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+6월 24, 2021 12:38:38.771 [11788:8480:0624/123838.770:ERROR:page_load_metrics_update_dispatcher.cc(170)] Invalid first_paint 0.274 s for first_image_paint 0.258 s
+
+6월 29, 2021 18:41:53.503 NEW SESSION
+6월 29, 2021 18:41:53.503 [4876:5832:0629/184153.497:ERROR:device_event_log_impl.cc(214)] [18:41:53.497] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+7월 01, 2021 11:35:01.554 NEW SESSION
+7월 01, 2021 11:35:01.554 [7456:1288:0701/113501.551:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+7월 01, 2021 11:35:01.556 [7456:1288:0701/113501.553:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+7월 01, 2021 11:35:01.557 [7456:1288:0701/113501.553:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+7월 01, 2021 11:35:02.306 [7456:1288:0701/113502.305:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+7월 01, 2021 11:35:02.306 [7456:1288:0701/113502.305:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+7월 01, 2021 11:35:02.307 [7456:1288:0701/113502.305:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+7월 01, 2021 11:35:02.308 [7456:1288:0701/113502.306:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+7월 01, 2021 11:35:02.308 [7456:1288:0701/113502.306:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+7월 01, 2021 11:35:02.309 [7456:1288:0701/113502.306:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+7월 01, 2021 11:35:02.309 [7456:1288:0701/113502.307:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+7월 01, 2021 11:35:02.310 [7456:1288:0701/113502.307:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+7월 01, 2021 11:35:02.311 [7456:1288:0701/113502.307:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+7월 01, 2021 11:35:02.311 [7456:1288:0701/113502.308:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+7월 01, 2021 11:35:02.313 [7456:1288:0701/113502.308:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+7월 01, 2021 11:35:02.313 [7456:1288:0701/113502.308:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+7월 01, 2021 11:35:02.314 [7456:1288:0701/113502.309:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+7월 01, 2021 11:35:02.315 [7456:1288:0701/113502.309:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+7월 01, 2021 11:35:02.315 [7456:1288:0701/113502.309:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+7월 01, 2021 18:14:36.379 [9928:8704:0701/181436.379:ERROR:device_event_log_impl.cc(214)] [18:14:36.378] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+7월 01, 2021 18:31:35.66 [14096:11980:0701/183135.066:ERROR:device_event_log_impl.cc(214)] [18:31:35.067] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+7월 01, 2021 18:32:07.467 [13452:10868:0701/183207.466:ERROR:device_event_log_impl.cc(214)] [18:32:07.466] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+7월 02, 2021 08:55:30.308 NEW SESSION
+7월 02, 2021 08:55:30.309 [14092:13852:0702/085530.307:ERROR:device_event_log_impl.cc(214)] [08:55:30.307] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)

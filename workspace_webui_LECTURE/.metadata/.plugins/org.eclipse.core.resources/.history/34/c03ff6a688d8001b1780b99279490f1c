@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Window 내장함수</title>
+<!-- js : internal -->
+<script type="text/javascript">
+	/* 주문처리 : 사용자 주문수량 입력받아서 주문내역 출력 
+		상품 가격 : 10,000
+		주문 수량 : 1 ~ 10개 제한
+		
+		# 사용기술(함수)
+		-- 변수 선언, 주문수량 입력, 주문수량 데이터 검증, 숫자여부 검증, 동적화면출력제어, 연산자, 정수형변환
+		-- prompt()
+		-- isNaN()
+		-- parseInt()
+		-- alert()
+		-- confirm()
+		
+		# 체킹사항
+		-- 주문수량 데이터 검증
+		1. 입력여부
+		2. 숫자데이터여부
+		3. 데이터 범위 : 1 ~ 10 => 숫자데이터 형변환
+		4. 주문내역 보여주기
+		5. 최종 주문여부 확인
+		6. 주문처리
+		7. 주문취소처리
+	*/
+	
+	/* 상품 가격 */
+	var price = 10000;
+		
+	/* 주문수량 입력받기 */	
+	var quantity = prompt("주문수량 입력하세요.", "");
+	console.log("주문수량 : " + quantity);
+	if (quantity == "") {
+		console.log("주문수량 입력하지 않음");
+	} else {
+		console.log("주문수량 입력함");
+	}
+
+</script>
+</head>
+<body>
+<h3>Window 내장함수</h3>
+</body>
+</html>

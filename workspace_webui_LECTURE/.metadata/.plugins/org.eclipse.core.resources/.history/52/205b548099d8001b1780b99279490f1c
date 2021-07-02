@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User Function</title>
+<!-- js : internal -->
+<script type="text/javascript">
+	/* 함수 선언 */
+	function hello() {
+		document.write("<h3>안녕</h3>");
+	}
+</script>
+</head>
+<body>
+<h3>User Function</h3>
+
+<script type="text/javascript">
+	/* 함수 호출 수행 */
+	hello();
+</script>	
+</body>
+</html>

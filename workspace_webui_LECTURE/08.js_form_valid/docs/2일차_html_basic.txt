@@ -1,0 +1,350 @@
+## ----------------------------------------
+## 	WebUI 
+## ----------------------------------------
+
+## Web Application(Web Component)
+-- Java 기술 사용
+-- JDK(자바 개발환경 : 컴파일러 등)
+-- JRE(자바 실행환경 = JVM + API(rt.jar))
+
+## Web
+-- Network 연결 : 
+	>> 시스템 식별 IP(고정, 동적) / Port No (1~65535, 1024 예약번호), tcp/ip
+	>> Client Host : 요청하는 시스템
+	>> Server Host : 응답하는 시스템
+-- www
+-- protocol : 통신 규약
+	>> 연결 : tcp/ip
+	>> service : http
+-- html(hypter text markup language)
+	>> html4 => html5(표준화)
+	>> http 개발언어
+	>> interpreter 방식의 개발언어
+	>> 전용번역기에 의해서 한줄씩 번역 및 실행
+	>> 장점: os 독립적
+	>> 전제조건 : os에 맞는 번역기 설치되어있어야함
+	>> 크로스 브라우저 : NetScape, IE(버전 호환성 부족)=> 엣지, 크롬, 사파리, 오페라 등
+	>> 기본 브라우저 : 크롬
+	
+-- 개발 및 서비스(운영) 환경
+	>> Web Server + Werb Container = Tomcat(오픈소스)
+	>> Tomcat : 8.5(많이사용) 
+	>> Spring Boot(Spring F/W) => Tomcat 9.x 내장
+	
+-- 웹개발관련 법규 : 
+	>> 장애인차별금지법	
+	
+## 웹 개발환경 구축
+-- WAS : Tomcat
+-- https://tomcat.apache.org/
+-- 설치 다운
+	>> .zip : 압축해제 설치 (권장)
+	>> .exe : install
+	
+-- 설치폴더
+	>> C:\00.practice\apache-tomcat-8.5.68
+	>> bin> 실행파일 (.bat, .sh, .exe 등)
+	
+	>> conf> configuration 서버운영관련 환경설정
+		=> .xml
+		=> .properties
+		=> .ini
+
+		=> server.xml => port="8080" => port="8070"
+		=> web.xml
+		=> context.xml
+
+-- Oracle XDB : 
+	>> 8080 사용함		
+
+-- 톰캣 서버 포트 번호
+	>> 8080
+	
+-- 사용하고 있는 포트번호 확인
+	>> dos> netstat -a
+	>> dos> netstat -a > use_portlist.txt
+
+-- 톰캣서버 구동	
+	>> bin> startup.bat
+	
+-- 톰캣서버 중지		
+	>> bin> shutdown.bat
+	
+-- 톰켓서버 정상 구동 : 웹 요청
+	>> http://127.0.0.1:8080
+	>> http://localhost:8080
+	>> http://서버ip:portno
+
+	>> 포트번호 변경
+	>> http://127.0.0.1:8070
+	
+	
+## Web Architecture 
+-- MVC Pattern	
+-- static contents : html, css, javascript(F/W : jquery, bootstratp 등)
+-- dynamic contents : CGI
+-- CGI :
+	>> PHP, ASP
+	>> Servlet / JSP
+-- Framework
+	>> Spring F/W
+	>> Spring Boot F/W
+	>> eGov F/W
+	>> MyBatis F/W : SQL Mapping
+	>> Hibernate F/W : ORM
+	>> JPA(Java Persistence API) : ORM 표준 Java API
+	
+## WebUI
+1. html / html5
+-- 화면 구조 역할 담당 
+
+2. css(cascading style sheet)
+-- 표현 역할 담당
+-- 색상, 글꼴, 라인 패턴 등
+
+3. javascript
+-- 사용자 이벤트 처리 역할 담당
+-- 사용자 입력데이터 검증 
+-- 동적 화면 제어 가능
+
+## eclipse 작업폴더
+-- c:\practice\workspace_webui 
+-- 새로운 워크스페이스에 대한 환경 설정
+	>> 한글인코딩
+	>> Java
+	>> Font
+	
+	>> Server >> Tomcat 서버 설정 [추가사항]
+	
+
+## 웹 프로젝트
+-- dynamic web project 
+
+
+
+## html
+-- www.w3.org
+-- www.w3schools.com
+
+## html 문서 특징
+1. 태그(element, tag) 대소문자 구분하지 않음
+2. html 파일명, 이미지 파일명은 대소문자 구분함
+3. 태그 구조 
+	>> 트리구조 : 부모태그(root tag), 자식태그
+	>> 태그를 nested해서 사용하는 경우에는 태그가 overlap 되지 않도록 올바르게 종료태그로 닫아주어야함
+4. 태그 구성요소
+	(1) <태그명>body contents</태그명>
+	(2) <태그명></태그명> 또는 <태그명 />  또는 <태그명> (브라우저 자동으로 파싱처리, xml 오류발생)
+	(3) 태그에 대한 부가적인 정보 속성 
+		<시작태그명 속성명="속성값" 속성명='속성값'>
+5. 주석
+	<!-- 주석내용 기술 : 응답시에 주석내용도 함께 응답이루어짐 : 사용자가 주석을 소스보기에서 가능, 페이지 레이아웃 설명 -->
+
+## 웹 시작페이지
+-- home page(시작 페이지)
+-- 기본 : index.html
+-- http://www.work.com	=> http://www.work.com/index.html
+-- WEB-INF> web.xml
+	=> 해당 웹 어플리케이션에 대한 환경설정 XML  문서
+	=> 시작페이지를 변경 설정 가능
+	
+-- 서버 실행 
+	>> project 선택 >> Run as >> Run on Server >> http://www.work.com 시작페이지 요청
+	>> 특정 html 선택 >> Run as >> Run on Server >> http://www.work.com/특정.html 
+	
+-- 웹 오류
+	>> HTTP 상태 404 – 찾을 수 없음 : 요청 url 정보가 틀린경우, 경로 틀림, 파일 미존재
+
+## 태그 종류
+1. block tag
+	>> System.out.println("hello");
+	>> 자동 라인 이동
+	>> <h1>, <p>, <div>
+	
+2. inline tag
+	>> System.out.print("hello");
+	>> 라인 이동 없음
+	>> <a>, <img>, <span>
+	
+## 기본 태그
+-- <h1> ~ </h6> 
+	>> 제목 태그, 기본적으로 라인 이동
+	>> 글자 크기를 6단계 
+
+-- <br> 라인 이동
+-- <p> 단락 이동
+-- <hr> 수평선 	
+	
+-- 순서있는 목록태그
+	>> 속성 : 
+		=> type="[1] | A | a | i | I"
+		=> start="시작인덱스번호"
+		=> 인덱스번호 1번부터
+	<ol>
+		<li>a</li>
+		<li>a</li>
+		<li>a</li>
+	</ol>
+	
+-- 순서없는 목록태그
+	>> 속성:
+		=> type="[disc] | circle | square"
+	<ul>
+		<li>a</li>
+		<li>a</li>
+		<li>a</li>
+	</ul>
+	
+-- 이동 태그 (anchor tag)
+	>> 속성
+		=> href="이동페이지url | 이동페이지url#링크지점명 | #현재페이지링크지점명 | #"
+		=> href="#" (현재 페이지 최상단, 페이지 이동이 발생되지 않음)
+		
+		=> name="링크지점명"
+		=> href 속성과 name 속성은 함께 사용 불가
+		
+		=> target="[_self] | _blank | _parent | _top | frame-name"
+		=> target="_blank" : 새창으로 페이지 이동
+		
+	>> 페이지 이동
+	<a href="이동페이지url" >문자열 또는 이미지</a>
+
+	>> 이동태그 문자열은 기본으로 밑줄표기됨 
+	>> css 이용해서 밑줄제거
+	
+	
+	
+-- 이미지 삽입 
+	<img src="이미지url">
+	>> src\main\webapp\images
+	>> src\main\webapp\img
+
+	>> 이미지 형식 : .jpg, .gif, .png 
+	
+-- 웹 개발시 저작권 : 주의사항 
+
+-- 입력양식 태그 
+>> 사용자 데이터 입력 방법
+>> 
+	<form action="" method=""> 
+		// 1.
+		<input type="입력양식" name="입력항목에대한변수명" [value="기본값"]>
+		// 2.
+		<select name="입력항목에대한변수명">
+			<option value="데이터1">항목1</option>
+			<option>데이터2</option>
+			<option>데이터3</option>
+		</select>
+		// 3. 여러줄 텍스트 : 상품소개, 자기소개
+		<textarea name="입력항목에대한변수명" rows="행수" cols="컬럼수"><textarea>
+	</from>
+
+>> type="입력양식"
+	=> text : 한줄 텍스트
+	=> password : 비밀텍스트(암호, 카드번호, 주민번호 뒷자리)
+	=> checkbox : 다중 선택
+	=> radio : 단일 선택 
+	=> hidden : 숨김텍스트 (value="숨김텍스트" 지정)
+	=> file : 파일첨부 (파일선택위한 탐색기)
+	
+	=> submit : 요청 전용 버튼 (value="버튼레이블텍스트")
+	=> reset : 초기화 전용 버튼 (value="버튼레이블텍스트")
+	=> button : 임의의 버튼 (value="버튼레이블텍스트")
+	
+	=> image : 사용자가 지정한 이미지를 버튼으로 사용 (src="btnOk.gif")
+
+-- built-in entity
+>> 내장 제공하는 엔티티
+>> 공백문자 : &nbsp; 
+
+
+## 표만들기 
+-- 속성 : 
+	>> 선굵기 : border="1"
+	>> 넓이 : width="크기"
+	>> 높이 : height="크기"
+	>> 배경색 : bgcolor="색상"
+	>> cell 합치기 : colspan="셀갯수"
+	>> row 합치 : rowspan="행갯수"
+	>> cell 간격 : cellspacing="2px"
+	>> cell 내용간격 : cellpadding="5px"
+	>> 정렬방법 : align="[left]|center|right"
+	
+-- 크기 지정방법
+	>> %
+	>> px
+	
+-- 색상
+	>> color name
+	>> #332277
+	>> rgb(255,0,0)
+	
+<table>
+	<caption>테이블제목</caption>
+	
+	<!-- 행 -->
+	<thead> <!-- css 반영시에 제목행과 본문행 구분 -->
+		<tr>
+			<th>가운데정렬 굵은글자표시</th>
+			<td>왼쪽정렬 일반글자표시</td>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<th>가운데정렬 굵은글자표시</th>
+			<td>왼쪽정렬 일반글자표시</td>
+		</tr>
+	</tbody>
+</table>
+
+
+## HTML5
+-- 웹 표준화
+-- 시멘틱태그 
+	>> html4 : <div id="head">~~</div>
+	>> html5 : <header></header>, <aside></aside>, <article></article>
+
+-- form 태그 
+	>> html4 : 아이디: <input type="text" name="memberId">
+	>> html5 : 
+		=> <input type="text" name="memberId" placeholder="아이디">
+		=> JavaScript를 이용해서 처리해야 했던 부분들이 속성으로 대체
+
+
+## 정규표현식 (regular expression)
+-- <input pattern="정규식">
+
+-- 영문대소문자 + 숫자
+	[A-Za-z0-9]{6,30}
+-- 영문대소문자 + 숫자 + 특수문자
+	[A-Za-z0-9!@#$%^&*]{6,30}
+-- 숫자
+	\d{최소길이, 최대길이}
+	\d{길이}
+-- 선택
+	(arg1 | arg2 | argx)
+
+-- 아이디 : 영문대소문자, 숫자, 이메일 조합, 최소6자리, 최대30자리
+	<input type="text" pattern="[A-Za-z0-9@.]{6,30}">
+
+## 그룹핑
+-- 	<fieldset>
+		<legend>그룹핑 레이블</legend>
+	</fieldset>
+	
+	
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	

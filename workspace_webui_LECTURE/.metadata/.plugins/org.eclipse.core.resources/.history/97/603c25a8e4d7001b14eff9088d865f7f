@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS BASIC</title>
+<!-- css: external -->
+<link type="text/css" rel="stylesheet" href="css/common_form.css">
+</head>
+<body>
+<!-- logo menu -->
+<div class="logo_menu"><img src="img/logo.png"></div>
+
+<!-- top menu -->
+<div class="top_menu">
+	<a href="login.html">로그인</a><span class="seperator">|</span>
+	<a class="color bold" href="joinMember.html">회원가입</a><span class="seperator">|</span>
+	<a class="bold" href="findMember.html">아이디/비밀번호찾기</a>
+</div>
+
+<!-- 컨텐츠 제목 -->
+<h3>회원관리 메인</h3>
+<!-- 컨텐츠 -->
+
+<!-- footer menu -->
+<div class="footer_menu">&copy; work.com</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

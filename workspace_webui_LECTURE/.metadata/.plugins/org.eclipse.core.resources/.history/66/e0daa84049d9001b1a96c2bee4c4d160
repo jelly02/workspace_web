@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Array / DOM</title>
+<!-- js : external -->
+<script type="text/javascript" src="js/common.js"></script>
+
+<!-- js : internal -->
+<script type="text/javascript">
+	/* 회원 클래스 선언 */
+	function Member(memberId, name, mileage) {
+		// 멤버변수 선언 및 초기화 수행 
+		this.memberId = memberId;
+		this.name = name;
+		this.mileage = mileage;
+	}
+	
+	/* 회원 객체 생성 */
+	var dto1 = new Member("user01", "홍길동", 1000);
+	var dto2 = new Member("user02", "강감찬", 2000);
+	
+	/* 회원 객체 property(멤버변수) 출력 */
+	document.write("<div>" + dto1.memberI + ", " + dto1.name + ", " + dto1.mileage + "</div>");
+	document.write("<div>" + dto2.memberI + ", " + dto2.name + ", " + dto2.mileage + "</div>");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

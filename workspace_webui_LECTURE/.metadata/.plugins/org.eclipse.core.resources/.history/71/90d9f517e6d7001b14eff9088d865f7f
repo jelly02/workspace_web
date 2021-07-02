@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* common.css : 공통 
+	-- main color : #0078d7, #e8f2fe
+	-- text color : #1f3240, #7878
+*/
+
+/* a */
+a {font-size: 12px;}
+a:link {text-decoration: none;}
+a:active {text-decoration: underline; color: red;}
+a:visited {text-decoration: none; color: gray;}
+a:hover {text-decoration: none; background-color: yellow; color: red;}
+
+a.color { }
+
+/* page title */
+.page_title {
+	color: #1f3240;
+}
+
+/* logo image */
+img[src*="logo"] {
+	width: 35px;
+	height: 35px;
+}
+
+/* top_menu area */
+div.top_menu {
+	text-align: right;
+	margin-right: 15px;
+}
+
+

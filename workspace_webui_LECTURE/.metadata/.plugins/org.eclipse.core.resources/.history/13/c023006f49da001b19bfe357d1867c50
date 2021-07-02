@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JavaScript Form Valid</title>
+<style type="text/css">
+	div { margin: 10px 0; }
+	div.input_title { font-size:15px; font-weight: bold; color: navy; }
+	input[readOnly] {
+		background-color: cyan;
+	}
+</style>
+
+<!-- 
+	## form 양식 데이터 검증 
+	1. 윈도우 로드 이벤트 : 아이디항목에 포커스 처리
+-->
+<script type="text/javascript">
+	/* 윈도우 로드 이벤트 함수 */
+	window.onload = function() {
+		// document.joinForm.memberId.focus();	
+		initForm();
+	}
+	
+	/* 폼 초기화 함수 */
+	function initForm() {
+		// 폼양식 > 입력항목 이름 
+		//document.joinForm.memberId.focus();
+		
+		// 폼양식 > 입력항목 id
+		document.getElementById("memberId").focus();
+		
+		// 이메일 도메인주소 읽기전용 설정
+		document.getElementById("email2").readOnly = "readOnly";
+		
+		clearMsg();
+	}
+	
+	/* 메세지 출력 지우기 */
+	function clearMsg() {
+		document.getElementById("memberIdMsg").innerHTML = "";
+		document.getElementById("memberPwMsg").innerHTML = "";
+		document.getElementById("memberPwConfirmMsg").innerHTML = "";
+		document.getElementById("email1Msg").innerHTML = "";
+	}
+	
+	/* reset button 이벤트 */
+	function clickReset() {
+		initForm();
+	}
+	
+	/* 입력양식 데이터 검증 이벤트 
+		1. 필수입력항목 : 아이디, 비밀번호, 비밀번호 확인
+			=> 입력항목객체.value
+	
+	*/
+	function checkForm() {
+		// 아이디 입력 데이터 가져오기 : id
+		var memberId = document.getElementById("memberId").value;
+		console.log("memberId: ", memberId.length);
+		// 데이터 검증
+		if (memberId == "" || memberId.trim().length == 0) {
+			document.getElementById("memberId").focus();
+			document.getElementById("memberIdMsg").innerHTML = "아이디를 입력하세요";
+			document.getElementById("memberIdMsg").style.color = "red";
+			document.getElementById("memberId").value = ""; // 사용자 입력데이터를 공백문자열 초기화
+			return false; // input type="submit"
+		}
+		memberId = memberId.trim();	// 사용자 입력데이터에 있는 공백제거 
+		console.log("memberId: ", memberId.length);
+		
+		
+		// 비밀번호 입력 데이터 가져오기 : name
+		var memberPw = document.joinForm.memberPw.value;
+		console.log("memberPw: ", memberPw);
+		
+		if (memberPw == "" || memberPw.trim().length == 0) {
+			document.getElementById("memberPw").focus();
+			document.getElementById("memberPwMsg").innerHTML = "비밀번호를 입력하세요";
+			document.getElementById("memberPwMsg").style.color = "red";
+			document.getElementById("memberPw").value = "";
+			return false; // input type="submit"
+		}
+		memberPw = memberPw.trim();
+		
+		// 비밀번호 확인 입력 데이터 가져오기 :
+		var memberPwConfirm = document.getElementById("memberPwConfirm").value;
+		console.log("memberPwConfirm: ", memberPwConfirm);
+		
+		if (memberPwConfirm == "" || memberPwConfirm.trim().length == 0) {
+			document.getElementById("memberPwConfirm").focus();
+			document.getElementById("memberPwConfirmMsg").innerHTML = "비밀번호확인을 입력하세요";
+			document.getElementById("memberPwConfirmMsg").style.color = "red";
+			document.getElementById("memberPw").value = "";
+			return false; // input type="submit"
+		}
+		memberPwConfirm = memberPwConfirm.trim();
+		
+		// 실습 : 비밀번호와 비밀번호확인 매칭 검증
+		if (memberPw != memberPwConfirm) {
+			document.getElementById("memberPw").focus();
+			document.getElementById("memberPwMsg").innerHTML = "비밀번호와 비밀번호 확인이 동일하지 않습니다.";
+			document.getElementById("memberPwMsg").style.color = "red";
+			return false; 
+		}
+		
+	}
+			
+	/* 비밀번호 표시 : 보인기 / 감추기 이벤트 
+		1. 비밀번호표시 체크박스 객체 가져오기
+		2. 비밀번호 객체 가져오기
+		3. 비밀번호확인 객체 가져오기
+		
+		4. 체크박스 체킹(checked == true) 
+			=> type='text'
+		5. 체크박스 해제(checked == false)
+			=> type='password'
+	*/
+	function viewMemberPw() {
+		var isVisablePasswordElement = document.getElementById("isVisablePassword");
+		var memberPwElement = document.getElementById("memberPw");
+		var memberPwConfirmElement = document.getElementById("memberPwConfirm");
+		
+		if (isVisablePasswordElement.checked) {
+			// 4. 체크박스 체킹(checked == true) 
+			memberPwElement.type = "text";
+			memberPwConfirmElement.type = "text";
+		} else {
+			// 5. 체크박스 해제(checked == false)
+			memberPwElement.type = "password";
+			memberPwConfirmElement.type = "password";
+		}
+	}
+			
+	/* [실습]
+		## 이메일 도메인을 선택하면 해당 도메인 주소를 이메일주소로 자동 초기화
+		-- select 
+			>> onchange
+			>> <option>네이버</option>
+			>> <option value="@naver.com">네이버</option>
+			
+		-- 읽기전용 : readOnly	
+	*/
+	function selectEmailChange(takeData) {
+		console.log("takeData: ", takeData);
+		
+		var email1Element = document.getElementById("email1");
+		var email2Element = document.getElementById("email2");
+		var email1Msg = document.getElementById("email1Msg");
+		
+		if (email1Element.value == "" || email1Element.value.trim().length == 0) {
+			email1Msg.innerHTML = "이메일 아이디를 먼저 입력하시기 바랍니다.";
+			email1Msg.style.color = "red";
+			email1Element.focus();
+			return;
+		}
+		
+		email1Msg.innerHTML = "";
+		
+		switch(takeData) {
+		case "none":
+			email2Element.value = "";
+			email2Element.readOnly = "readOnly";
+			break;
+			
+		case "userInput":
+			email2Element.value = "@";
+			email2Element.readOnly = "";
+			email2Element.focus();
+			break;
+			
+		default:
+			email2Element.value = takeData;
+			email2Element.readOnly = "readOnly";
+			break;
+		}
+	}
+			
+	/* 관심분야 checkbox 전체 선택 
+		1. 관심분야 checkbox 객체 가져오기 : NodeList
+		2. checkbox item 갯수만큼 반복
+		3. cheked 되어 있지않으면 클릭(click()) 체크 설정
+	*/
+	function checkAll() {
+		var interestElement = document.joinForm.interest;
+		
+		console.log("typeof : interestElement", typeof interestElement);
+		console.log("interestElement.length: ", interestElement.length);
+		
+		for (index = 0; index < interestElement.length; index++) {
+			if (interestElement[index].checked == false) {
+				interestElement[index].click();
+			}
+		}
+	}
+	
+	/* 관심분야 checkbox 전체 해제 
+		1. 관심분야 checkbox 객체 가져오기 : NodeList
+		2. checkbox item 갯수만큼 반복
+		3. cheked 되어있음면 클릭(click()) 체크 해제
+	*/
+	function clearAll() {
+		var interestElement = document.joinForm.interest;
+		
+		for (index = 0; index < interestElement.length; index++) {
+			if (interestElement[index].checked) {
+				interestElement[index].click();
+			}
+		}
+	}
+	
+	/* 자기소개 textarea 입력 길이 출력 */
+	function introLengthCheck(takeData) {
+		var introLengthElement = document.getElementById("introLength");
+		introLengthElement.innerHTML = takeData.length;
+	}
+	
+	/* 아이디 중복확인 새창열기 */
+	function openIdChekWindow() {
+		var specs = "width=400,height=300,top=300,left=500";
+		var idWin = window.open("duplicateMemberId.html", "_blank", specs);
+	}
+	
+	/* 비밀번호확인 포커스를 잃었을때 비밀번호와 동일한지 검증 */
+	function checkMappingMemberPw() {
+		var memberPw = document.getElementById("memberPw").value;
+		var memberPwConfirm = document.getElementById("memberPwConfirm").value;
+		
+		if (memberPw != memberPwConfirm) {
+			document.getElementById("memberPw").focus();
+			document.getElementById("memberPwMsg").innerHTML = "비밀번호와 비밀번호 확인이 동일하지 않습니다.";
+			document.getElementById("memberPwMsg").style.color = "red";
+			
+			// 입력 데이터 선택
+			document.getElementById("memberPw").select()
+			return false; 
+		}
+	}
+</script>
+</head>
+
+<body>
+<h3>JavaScript Form Valid</h3>
+<!-- 
+	## form 입력 양식 
+	-- 아이디 : 텍스트 text
+	-- 비밀번호 / 비밀번호 확인 : 비밀번호 password
+	-- 비밀번호 표시 : 체크박스 checkbox
+	-- 이메일: 이메일아이디/도메인주소/도메인선택 checkbox 
+	-- 관심분야 : 체크박스 (항목 5개) chcekbox
+	-- 자기소개 : textarea
+	
+	-- 확인전용버튼 : submit
+	-- 취소전용버튼 : reset
+ -->
+ 
+<!-- 컨텐츠 -->
+<div>
+<form action="result.html" method="post" name="joinForm" id="joinForm">
+	<!-- 아이디 -->
+	<div>
+		<div class="input_title">아이디</div>
+		<div>
+			<input type="text" name="memberId" id="memberId">
+			<input type="button" value="아이디중복" onclick="openIdChekWindow()">
+			<span id="memberIdMsg"></span>
+		</div>
+	</div>
+		
+	<!-- 비밀번호 -->
+	<div>
+		<div class="input_title">비밀번호</div>
+		<div>
+			<input type="password" name="memberPw" id="memberPw">
+			<span id="memberPwMsg"></span>
+		</div>
+	</div>
+	
+	<!-- 비밀번호확인 -->
+	<div>
+		<div class="input_title">비밀번호 확인</div>
+		<div>
+		<input type="password" name="memberPwConfirm" id="memberPwConfirm"
+			onblur="checkMappingMemberPw()">
+		
+		<input type="checkbox" name="isVisablePassword" id="isVisablePassword"
+			onclick="viewMemberPw()">비밀번호 표시
+		<span id="memberPwConfirmMsg"></span>
+		</div>
+	</div>
+	
+	<!-- 이메일 -->
+	<div>
+		<div class="input_title">이메일</div>
+		<div>
+		<input type="text" name="email1" id="email1">
+		<input type="text" name="email2" id="email2">
+		<select name="selectEmail" id="selectEmail" onchange="selectEmailChange(this.value)">
+			<option value="none">= 선택 =</option>
+			<option value="@naver.com">네이버</option>
+			<option value="@gmail.com">구글</option>
+			<option value="userInput">직접입력</option>
+		</select>
+		<span id="email1Msg"></span>
+		</div>
+	</div>
+	
+	<!-- 관심분야 -->
+	<div>
+		<div class="input_title">관심분야</div>
+		<div>
+			<input type="checkbox" name="interest" value="1">자바
+			<input type="checkbox" name="interest" value="2">데이터베이스
+			<input type="checkbox" name="interest" value="3">웹어플리케이션
+			<input type="checkbox" name="interest" value="4">데이터분석
+			<input type="checkbox" name="interest" value="5">화면디자인
+		</div>
+		<div>
+			<input type="button" value="전체선택" onclick="checkAll()">
+			<input type="button" value="전체해제" onclick="clearAll()">
+		</div>
+	</div>
+	
+	<!-- 자기소개 -->
+	<div>
+		<div class="input_title">자기소개(200자이내입력)</div> 
+		<div>
+		[입력글자수] <span id="introLength">0</span>글자
+		</div>
+		
+		<div>
+			<textarea cols="60" rows="5" name="intro" id="intro" onkeyup="introLengthCheck(this.value)"></textarea>
+		</div>
+	</div>
+	
+	<!-- submit / reset -->
+	<div>
+		<input type="submit" value="회원가입:submit" onclick="return checkForm();">
+		<input type="reset" value="취소:reset" onclick="clickReset()">
+	</div>
+	
+	<!-- button -->
+	<div>
+		<input type="button" value="회원가입:button" onclick="checkForm2();">
+		<input type="button" value="취소:button" onclick="clickReset2()">
+	</div>
+
+	<!-- <a>, <img> -->
+	<div>
+		<a href="javascript:checkForm2();">확인</a>
+		<a href="javascript:clickReset2();">취소</a>
+	</div>
+</form>	
+</div>
+ 
+</body>
+</html>

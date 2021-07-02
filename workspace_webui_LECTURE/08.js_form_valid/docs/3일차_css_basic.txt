@@ -1,0 +1,213 @@
+## -----------------------------------
+## CSS BASIC
+## -----------------------------------
+
+## 웹 어플리케이션 구성 요소 (Java 기술 기반)
+1. static 문서
+	=> html/html5 : 화면 배치(구조) 담당 : 정적(고정)컨텐츠
+	=> css : 화면 표현 담당
+	=> javascript : 이벤트처리, 사용자입력데이터 검증, 동적컨텐츠 
+2. 환경설정
+	=> WEB-INF> web.xml
+3. 자바클래스.java => 자바클래스.class, 서블릿(JSP) => 웹 동적컨텐츠 
+4. 라이브러리 : *.jar
+
+-- 정적컨텐츠 : html/css/javascript(view)
+-- 동적컨테츠 : 서블릿(controller), JSP(view)
+-- 자바클래스.class : Model(service, dao, dto), 유틸리티, 패턴프로그래밍, 예외
+-- Pattern Programming
+	>> MVC pattern
+	>> DAO pattern, Factory pattern, Singleton pattern
+	>> DTO pattern
+-- Web Server : static contents 서비스
+-- Web Container: 웹 자바실행환경
+-- Tomcat(WAS) = Web Server + Web Container
+
+## CSS (Cascading Style Sheet)
+-- html 화면을 어떻게 표현 
+-- 색상, 크기, 간격, 글꼴 등 
+-- 공통(일반화, 표준화), 유지보수편리, 재사용성, 업무역할분담
+
+## css 파일 선언위치(종류)
+1. 태그 반영 : 
+	>> inline style
+	>> 우선순위 가장 높음 
+	>> 목적 : 충돌 발생시에 해결, 테스트 목적
+	
+2. 내부 파일 : 
+	>> internal
+	>> 현재 html 문서에 적용
+
+3. 외부 파일 :
+	>> external
+	>> 별도 분리 설계 : 권장, 재사용성, 유지보수편리, 표준화, 역할분담
+	
+4. 외부 파일 import + 내부 파일로 일부 변경 적용
+
+## 기본 형식
+	선택자 {
+		property-name: value;
+		property-name: value;
+	}
+	
+	선택자{property-name: value;property-name: value;}
+
+## 주석
+/* css 주석내용 */
+
+
+## css 관련 html 태그 속성
+-- style 속성 : inline 방식으로 해당 태그에 css 적용 
+	<tag style="property-name: value;property-name: value;">
+	
+-- class 속성 : grouping 
+	<tag class="class-name" >
+	
+-- id 속성 : unique	
+	<tag id="id-name" >
+
+	
+## css 관련 html 태그
+-- <div></div> : block tag, 라인 이동, margin, padding 지정
+-- <span></span> : inline tag, 라인 이동 없음, margin, padding 지정불가
+
+
+## 주요 선택자 (selectors)
+-- *
+	>> 공통선택자
+	>> * {margin: 0; padding: 0;}
+	
+-- 태그명
+	>> 태그 선택자
+	>> 모든 해당 태그에 적용
+	
+-- .클래스명
+	>> class="클래스명" 지정한 모든 태그 적용
+	
+-- 태그명.클래스명
+	>> <tag class="클래스명">
+	>> 해당 태그의 class로 지정한 태그에 대해서만 적용
+	
+-- #id-name, tag#id-name
+	>> <tag id="id-name">
+	>> id-name 웹페이지에서 unique 지정해야함
+	
+-- 태그명, 태그명 
+	>> or 개념, 다중 선택 적용
+	
+-- 자손 선택자
+	>> 태그명1 자손태그명2 자손태그명3 
+	>> 공백 구분자
+	
+-- 자식 선택자
+	>> 태그명1 > 자식태그명2 > 자식태그명3 
+	>> ">" 구분자	
+	
+-- 형제 선택자
+	>> 태그명1 + 형제태그명2 + 형제태그명3 
+	>> "+" 구분자	
+		
+-- 의사 선택자
+	:link		=> 링크
+	:active		=> 클릭순간
+	:visited 	=> 방문
+	:hover		=> 마우스가 왔을때 : <a>, <img>
+	
+	:focus		=> focus(포커스)가 온 경우
+	
+	:first-child => 첫번째 자식
+	:last-chile  => 마지막 자식
+	
+	
+## 속성 선택자
+-- [속성명]
+	>> 속성명을 갖는 모든 요소 적용
+	
+-- 태그명[속성명="속성값"]	
+	>> 해당 태그의 속성의 값과 동일한 요소
+	>> where name='html';
+	
+-- 태그명[속성명^="속성시작값"]	
+	>> 해당 태그의 속성의 시작값과 동일한 요소
+	>> where name='html%';
+	
+-- 태그명[속성명$="속성종료값"]	
+	>> 해당 태그의 속성의 종료값 동일한 요소
+	>> where name='%html';
+	
+-- 태그명[속성명*="속성포함되는값"]	
+	>> 해당 태그의 속성의 종료값 동일한 요소
+	>> where name='%html%';
+
+## [실습]	
+-- 이미지 10개 다운받으세요 : img 폴더에 복사
+-- png, gif, jpg
+-- imageView.html 작성하기
+	>> 복사한 이미지 10개를 html 문서에 삽입하기
+	
+## css 주요 속성
+-- display
+	>> block
+	>> inline
+	>> inline-block
+-- visibility
+	>> visible
+	>> hidden
+-- width
+-- height
+-- color
+-- font-weight
+-- font-size
+-- border
+-- margin
+-- padding
+-- text-decoration
+-- text-align
+-- list-style
+-- border-radious
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

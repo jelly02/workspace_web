@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MMS</title>
+<!-- css: external -->
+<link type="text/css" rel="stylesheet" href="css/common_form.css">
+</head>
+<body>
+<!-- logo menu -->
+<div class="logo_menu"><img src="img/logo.png"></div>
+
+<!-- top menu -->
+<div class="top_menu">
+	<a href="login.html">로그인</a><span class="seperator">|</span>
+	<a class="color bold" href="joinMember.html">회원가입</a><span class="seperator">|</span>
+	<a class="bold" href="findMember.html">아이디/비밀번호찾기</a>
+</div>
+
+<!-- 컨텐츠 제목 -->
+<h1>[로그인]</h1>
+
+<table class="form_table">
+<form action="result.html" method="post">
+	<!-- 아이디 -->
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="memberId" autofocus="autofocus"></td>
+	</tr>
+
+	<!-- 비밀번호 -->
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="password" name="memberPw"></td>
+	</tr>
+
+	<!-- submit / reset -->
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="로그인" class="btn_submit normal" >
+			<input type="reset" value="취소" class="normal">
+		</td>
+	</tr>
+</form>	
+</table>
+
+<!-- footer menu -->
+<div class="footer_menu">&copy; work.com</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

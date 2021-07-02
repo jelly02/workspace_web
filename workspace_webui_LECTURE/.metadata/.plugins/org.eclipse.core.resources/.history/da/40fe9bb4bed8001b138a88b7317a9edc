@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MMS</title>
+<!-- css: external -->
+<link type="text/css" rel="stylesheet" href="css/common.css">
+<link type="text/css" rel="stylesheet" href="css/common_form.css">
+</head>
+<body>
+<!-- logo menu -->
+<div class="logo_menu"><img src="img/logo.png"></div>
+
+<!-- top menu -->
+<div class="top_menu">
+	<a href="login.html">로그인</a><span class="seperator">|</span>
+	<a class="color bold" href="joinMember.html">회원가입</a><span class="seperator">|</span>
+	<a class="bold" href="findMember.html">아이디/비밀번호찾기</a>
+</div>
+
+<!-- 컨텐츠 제목 -->
+<h1>[회원가입]</h1>
+
+<!-- 컨텐츠 -->
+<div class="box_form">
+<form action="result.html" method="post">
+	<!-- 아이디 -->
+	<div class="input_row">
+		<span class="input_label">아이디</span>
+		<span><input type="text" name="memberId" autofocus="autofocus"></span>
+	</div>
+		
+	<!-- 비밀번호 -->
+	<div class="input_row">
+		<span class="input_label">비밀번호</span>
+		<span><input type="password" name="memberPw"></span>
+	</div>
+	
+	<!-- 비밀번호확인 -->
+	<div class="input_row">
+		<span class="input_label">비밀번호확인</span>
+		<span></span>
+		<span>
+		<input type="password" name="memberPwConfirm">
+		<input type="checkbox" name="isVisablePassword">비밀번호 보이기
+		</span>
+	</div>
+	
+	<!-- 이름 -->
+	<div class="input_row">
+		<span class="input_label">이름</span>
+		<span><input type="text" name="name"></span>
+	</div>
+	
+	<!-- 휴대폰 -->
+	<div class="input_row">
+		<span class="input_label">휴대폰</span>
+		<span><input type="text" name="mobile"></span>
+	</div>
+	
+	<!-- 이메일 -->
+	<div class="input_row">
+		<span class="input_label">이메일</span>
+		<span>
+		<input type="text" name="email1">
+		<input type="text" name="email2">
+		<select name="selectEmail">
+			<option value="none">= 선택 =</option>
+			<option value="@naver.com">네이버</option>
+			<option value="@gmail.com">구글</option>
+			<option value="userInput">직접입력</option>
+		</select>
+		</span>
+	</div>
+	
+	<!-- submit / reset -->
+	<div class="input_row input_btn">
+		<input type="submit" value="회원가입" class="btn_submit normal">
+		<input type="reset" value="취소" class="normal">
+	</div>
+</form>	
+</div>
+<!-- footer menu -->
+<div class="footer_menu">&copy; work.com</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

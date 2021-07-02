@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* form 양식 css : css/common_form.css */
+input.btn_submit {
+	background-color: #D71826;
+	color: #fff;
+}
+
+input.normal {
+	width: 80px;
+	height: 25px;
+	border-radius: 15px;
+}
+
+/* 입력항목에 포커스가 올때 배경색 변경 */
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus,
+	input[type="checkbox"]:focus, select>option:focus {
+	background-color: #38f2fe;
+}

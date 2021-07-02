@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* form 양식 css : css/common_form.css */
+input.btn_submit {
+	background-color: #D71826;
+	color: #fff;
+}
+
+input.normal {
+	width: 80px;
+	height: 25px;
+	border-radius: 15px;
+}

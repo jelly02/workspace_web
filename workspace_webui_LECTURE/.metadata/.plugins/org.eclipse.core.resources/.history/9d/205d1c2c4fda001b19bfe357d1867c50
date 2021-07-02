@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>동적 화면만들기</title>
+<script type="text/javascript">
+	var contentsElement = null;
+	window.onload = function() {
+		contentsElement = document.getElementById("contents");
+		alert(contentsElement.ELEMENT_TYPE)
+	}
+	
+	alert(contentsElement);
+	
+	function addItem() {
+		
+	}
+	
+	function removeItem() {
+		
+	}
+</script>
+</head>
+<body>
+
+<button onclick="addItem();">추가</button>
+<button onclick="removeItem();">삭제</button>
+
+<div id="contents"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>리스트 목록 css</title>
+<!-- css: external -->
+<link type="text/css" rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<!-- 순서있는, 순서없는 목록 -->
+<!-- 목록 : 메뉴아이템1 ~ 메뉴아이템5 -->
+<ul class="menu_item_1">
+	<li>메뉴아이템1</li>
+	<li>메뉴아이템2</li>
+	<li>메뉴아이템3</li>
+	<li>메뉴아이템4</li>
+	<li>메뉴아이템5</li>
+</ul>
+</body>
+</html>

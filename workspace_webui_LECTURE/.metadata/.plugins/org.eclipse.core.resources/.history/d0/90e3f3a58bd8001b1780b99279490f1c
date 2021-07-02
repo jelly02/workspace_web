@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Window 내장함수</title>
+<!-- js : internal -->
+<script type="text/javascript">
+	/* 주문처리 : 사용자 주문수량 입력받아서 주문내역 출력 
+		상품 가격 : 10,000
+		주문 수량 : 1 ~ 10개 제한
+		
+		# 사용기술(함수)
+		-- 변수 선언, 주문수량 입력, 주문수량 데이터 검증, 숫자여부 검증, 동적화면출력제어, 연산자, 정수형변환
+		-- prompt()
+		-- isNaN()
+		-- parseInt()
+		-- alert()
+		-- confirm()
+		
+		# 체킹사항
+		-- 주문수량 데이터 검증
+		1. 입력여부
+		2. 숫자데이터여부
+		3. 데이터 범위 : 1 ~ 10 => 숫자데이터 형변환
+		4. 주문내역 보여주기
+		5. 최종 주문여부 확인
+		6. 주문처리
+		7. 주문취소처리
+	*/
+	
+	/* 상품 가격 */
+	var price = 10000;
+		
+	/* 주문수량 입력받기 */	
+	var quantity = prompt("주문수량 입력하세요.", "");
+	console.log("주문수량 : " + quantity);
+	console.log("데이터타입 : " + typeof(quantity));
+	
+	if (quantity != "") {
+		if (isNaN(quantity)) {
+			alert("[오류] 주문수량은 숫자로 입력하시기 바랍니다.");
+		} else {
+			var orderPrice = price * parseInt(quantity);
+			console.log("orderPrice : " + orderPrice);
+			
+			//var message; 	// 변수만 선언하면 undefined
+			var message = "";	// 해결 : undefined => 공백문자열 초기화 처리
+			message += "주문내역정보";		// undefined주문내역정보 문제 => 주문내열정보
+			message += ("\n상품가격 : " + price);
+			message += ("\n주문수량 : " + quantity);
+			message += ("\n주문총액 : " + orderPrice);
+			message += ("\n-----------------------");
+			message += ("\n주문 하시겠습니까? ");
+			
+			var isOrder = confirm(message);
+			if (isOrder) {
+				document.write("[주문 완료되었습니다.]");
+			} else {
+				document.write("[주문 취소되었습니다.]");
+			}
+		}
+	} else {
+		alert("[오류] 주문수량을 입력하시기 바랍니다.");
+	}
+
+</script>
+</head>
+<body>
+<h3>Window 내장함수</h3>
+</body>
+</html>
